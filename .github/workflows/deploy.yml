@@ -22,7 +22,6 @@ jobs:
 
       - name: Deploy theme to Shopify
         env:
-          SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_STORE }}
+          CI: "true"
           SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
-          SHOPIFY_FLAG_IGNORE_ERRORS: "true"
-        run: shopify theme push --live --no-color
+        run: shopify theme push --store=${{ secrets.SHOPIFY_STORE }} --no-color
