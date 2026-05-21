@@ -25,4 +25,4 @@ jobs:
           CI: "true"
           SHOPIFY_STORE: ${{ secrets.SHOPIFY_STORE }}
           SHOPIFY_PASSWORD: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
-        run: shopify theme push --store="$SHOPIFY_STORE" --password="$SHOPIFY_PASSWORD" --live --no-color
+        run: shopify theme push --store="$SHOPIFY_STORE" --password="$SHOPIFY_PASSWORD" --live --allow-live --no-color
