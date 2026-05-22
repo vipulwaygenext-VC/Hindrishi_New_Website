@@ -1,0 +1,73 @@
+{{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+
+<div
+  class="hindrishi-trust-strip"
+  style="background:{{ section.settings.bg_color }};border-top:1px solid rgba(255,255,255,0.15);border-bottom:1px solid rgba(0,0,0,0.08);"
+>
+  <div class="hindrishi-marquee" style="padding:{{ section.settings.padding_v }}px 0;">
+    <div class="hindrishi-marquee__track">
+      {%- for i in (1..2) -%}
+        {%- for block in section.blocks -%}
+          <span class="hts__item" {{ block.shopify_attributes }}>
+            <span class="hts__icon" aria-hidden="true">{{ block.settings.icon }}</span>
+            <span class="hts__text">{{ block.settings.text }}</span>
+          </span>
+          <span class="hts__sep" aria-hidden="true">✦</span>
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  .hts__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 22px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: {{ section.settings.text_color }};
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+  .hts__icon { font-size: 1.5rem; }
+  .hts__sep  { color: {{ section.settings.text_color }}; opacity: 0.4; font-size: 0.9rem; }
+</style>
+
+{% schema %}
+{
+  "name": "Trust Strip",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "color", "id": "bg_color",   "label": "Background", "default": "#2D5A27" },
+    { "type": "color", "id": "text_color", "label": "Text Color",  "default": "#ffffff" },
+    { "type": "range", "id": "padding_v",  "label": "Vertical Padding", "min": 8, "max": 20, "step": 2, "default": 12 }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Trust Item",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Emoji Icon", "default": "✓" },
+        { "type": "text", "id": "text", "label": "Text",       "default": "100% Ayurvedic" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Trust Strip",
+    "blocks": [
+      { "type": "item", "settings": { "icon": "🌿", "text": "100% Ayurvedic Formula" } },
+      { "type": "item", "settings": { "icon": "✓",  "text": "GMP Certified Manufacturing" } },
+      { "type": "item", "settings": { "icon": "🏆", "text": "FSSAI Licensed" } },
+      { "type": "item", "settings": { "icon": "🧪", "text": "Lab Tested for Purity" } },
+      { "type": "item", "settings": { "icon": "👨‍👩‍👧","text": "40,000+ Happy Customers" } },
+      { "type": "item", "settings": { "icon": "🚚", "text": "Free Shipping ₹499+" } },
+      { "type": "item", "settings": { "icon": "💰", "text": "COD Available Pan India" } },
+      { "type": "item", "settings": { "icon": "🔒", "text": "Secure Checkout" } },
+      { "type": "item", "settings": { "icon": "🇮🇳", "text": "Made in India" } }
+    ]
+  }]
+}
+{% endschema %}

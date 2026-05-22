@@ -1,0 +1,224 @@
+/* ============================================
+   HINDRISHI AYURVEDA — BRAND DESIGN SYSTEM
+   Built on Shopify Taste Theme v15.4.1
+   ============================================ */
+
+:root {
+  --hindrishi-green:          #2D5A27;
+  --hindrishi-green-hover:    #245020;
+  --hindrishi-green-light:    #4a7a42;
+  --hindrishi-green-pale:     #DBE9E0;
+  --hindrishi-green-ultra:    #F0F7F2;
+  --hindrishi-brown:          #8B5E3C;
+  --hindrishi-brown-hover:    #7a5234;
+  --hindrishi-brown-light:    #B8865A;
+  --hindrishi-cream:          #F9F4EE;
+  --hindrishi-cream-dark:     #F0E8DC;
+  --hindrishi-peach:          #FFDFB8;
+  --hindrishi-peach-dark:     #FFC87A;
+  --hindrishi-text-dark:      #1C1C1C;
+  --hindrishi-text-medium:    #4A4A4A;
+  --hindrishi-text-light:     #717171;
+  --hindrishi-border:         #E8DDD0;
+  --hindrishi-border-light:   #F0EBE3;
+  --hindrishi-success:        #27AE60;
+  --hindrishi-gold:           #C9963A;
+  --hindrishi-star:           #F5A623;
+
+  --hindrishi-radius-sm:  4px;
+  --hindrishi-radius-md:  8px;
+  --hindrishi-radius-lg:  16px;
+  --hindrishi-radius-pill:100px;
+
+  --hindrishi-shadow-sm:   0 2px 8px  rgba(45,90,39,0.08);
+  --hindrishi-shadow-md:   0 4px 20px rgba(45,90,39,0.12);
+  --hindrishi-shadow-lg:   0 8px 40px rgba(45,90,39,0.16);
+  --hindrishi-shadow-card: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+/* ── Buttons ───────────────────────────────── */
+.hindrishi-btn-primary,
+.hindrishi-btn-secondary,
+.hindrishi-btn-brown {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-family: var(--font-heading-family);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background .2s, border-color .2s, color .2s, transform .15s, box-shadow .2s;
+}
+
+.hindrishi-btn-primary {
+  background: var(--hindrishi-green);
+  color: #fff;
+  border-color: var(--hindrishi-green);
+}
+.hindrishi-btn-primary:hover {
+  background: var(--hindrishi-green-hover);
+  border-color: var(--hindrishi-green-hover);
+  box-shadow: var(--hindrishi-shadow-md);
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+.hindrishi-btn-secondary {
+  background: transparent;
+  color: var(--hindrishi-green);
+  border-color: var(--hindrishi-green);
+}
+.hindrishi-btn-secondary:hover {
+  background: var(--hindrishi-green);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.hindrishi-btn-brown {
+  background: var(--hindrishi-brown);
+  color: #fff;
+  border-color: var(--hindrishi-brown);
+}
+.hindrishi-btn-brown:hover {
+  background: var(--hindrishi-brown-hover);
+  border-color: var(--hindrishi-brown-hover);
+  transform: translateY(-1px);
+}
+
+/* ── Badges ────────────────────────────────── */
+.hindrishi-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--hindrishi-radius-pill);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.hindrishi-badge--green {
+  background: var(--hindrishi-green-pale);
+  color: var(--hindrishi-green);
+  border: 1px solid rgba(45,90,39,0.2);
+}
+.hindrishi-badge--brown {
+  background: var(--hindrishi-peach);
+  color: var(--hindrishi-brown);
+  border: 1px solid rgba(139,94,60,0.2);
+}
+.hindrishi-badge--gold {
+  background: #FFF8E7;
+  color: var(--hindrishi-gold);
+  border: 1px solid rgba(201,150,58,0.3);
+}
+
+/* ── Stars ─────────────────────────────────── */
+.hindrishi-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: var(--hindrishi-star);
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.hindrishi-rating-text {
+  font-size: 1.3rem;
+  color: var(--hindrishi-text-medium);
+  font-weight: 500;
+}
+
+/* ── Section typography helpers ────────────── */
+.hindrishi-section-tag {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--hindrishi-green);
+  margin-bottom: 12px;
+}
+.hindrishi-section-heading {
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 700;
+  color: var(--hindrishi-text-dark);
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+.hindrishi-section-subheading {
+  font-size: 1.7rem;
+  color: var(--hindrishi-text-medium);
+  line-height: 1.65;
+  max-width: 640px;
+  margin: 0;
+}
+
+/* ── Divider ────────────────────────────────── */
+.hindrishi-divider {
+  width: 48px;
+  height: 3px;
+  background: var(--hindrishi-green);
+  margin: 0 auto 32px;
+  border-radius: 2px;
+}
+.hindrishi-divider--left  { margin-left: 0; }
+.hindrishi-divider--brown { background: var(--hindrishi-brown); }
+
+/* ── Marquee animation ──────────────────────── */
+@keyframes hindrishi-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.hindrishi-marquee { overflow: hidden; white-space: nowrap; }
+.hindrishi-marquee__track {
+  display: inline-flex;
+  align-items: center;
+  animation: hindrishi-marquee 35s linear infinite;
+}
+.hindrishi-marquee__track:hover { animation-play-state: paused; }
+
+/* ── Responsive helpers ─────────────────────── */
+@media screen and (max-width: 749px)  { .hindrishi-hide-mobile  { display: none !important; } }
+@media screen and (min-width: 750px)  { .hindrishi-hide-desktop { display: none !important; } }
+
+/* ── Trust badge strip (product page reuse) ─── */
+.hindrishi-trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.hindrishi-trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: #fff;
+  border: 1px solid var(--hindrishi-border);
+  border-radius: var(--hindrishi-radius-sm);
+  box-shadow: var(--hindrishi-shadow-sm);
+}
+.hindrishi-trust-badge__icon { font-size: 1.8rem; line-height: 1; }
+.hindrishi-trust-badge__text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--hindrishi-text-dark);
+  line-height: 1.2;
+}
+
+/* ── Prepaid nudge banner ───────────────────── */
+.hindrishi-prepaid-nudge {
+  background: linear-gradient(135deg, var(--hindrishi-green-pale) 0%, var(--hindrishi-peach) 100%);
+  border: 1px solid var(--hindrishi-border);
+  border-radius: var(--hindrishi-radius-md);
+  padding: 14px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.hindrishi-prepaid-nudge__icon { font-size: 2.2rem; flex-shrink: 0; }
+.hindrishi-prepaid-nudge__body { font-size: 1.4rem; line-height: 1.5; color: var(--hindrishi-text-dark); }
+.hindrishi-prepaid-nudge__body strong { color: var(--hindrishi-green); }

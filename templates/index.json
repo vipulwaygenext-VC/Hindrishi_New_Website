@@ -1,56 +1,57 @@
 {
   "sections": {
-    "image-with-text": {
-      "type": "image-with-text",
+    "trust_strip": {
+      "type": "hindrishi-trust-strip",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Our latest",
-            "heading_size": "h0"
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop all",
-            "button_link": "shopify://collections/all",
-            "button_style_secondary": false
-          }
-        }
+        "item1": { "type": "item", "settings": { "icon": "🌿", "text": "100% Ayurvedic Formula" } },
+        "item2": { "type": "item", "settings": { "icon": "✓",  "text": "GMP Certified Manufacturing" } },
+        "item3": { "type": "item", "settings": { "icon": "🏆", "text": "FSSAI Licensed" } },
+        "item4": { "type": "item", "settings": { "icon": "🧪", "text": "Lab Tested for Purity" } },
+        "item5": { "type": "item", "settings": { "icon": "👨‍👩‍👧","text": "40,000+ Happy Customers" } },
+        "item6": { "type": "item", "settings": { "icon": "🚚", "text": "Free Shipping ₹499+" } },
+        "item7": { "type": "item", "settings": { "icon": "💰", "text": "COD Available Pan India" } },
+        "item8": { "type": "item", "settings": { "icon": "🔒", "text": "Secure Checkout" } },
+        "item9": { "type": "item", "settings": { "icon": "🇮🇳","text": "Made in India" } }
       },
-      "block_order": [
-        "heading",
-        "button"
-      ],
-      "settings": {
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "center",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "scheme-1",
-        "color_scheme": "scheme-1",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "padding_top": 12,
-        "padding_bottom": 32
-      }
+      "block_order": ["item1","item2","item3","item4","item5","item6","item7","item8","item9"],
+      "settings": { "bg_color": "#2D5A27", "text_color": "#ffffff", "padding_v": 12 }
     },
-    "featured_collection": {
+    "hero": {
+      "type": "hindrishi-hero",
+      "blocks": {
+        "badge":     { "type": "badge",     "settings": { "icon": "🌿", "text": "5,000 Years of Ayurvedic Wisdom" } },
+        "heading":   { "type": "heading",   "settings": { "heading": "<p>Ancient Wisdom.<br><em>Modern Wellness.</em></p>", "color": "#1C1C1C" } },
+        "subheading":{ "type": "subheading","settings": { "text": "Premium herbal formulations crafted from time-tested Ayurvedic ingredients. GMP certified. Lab tested. Trusted by 40,000+ families across India.", "color": "#4A4A4A" } },
+        "buttons":   { "type": "buttons",   "settings": { "btn1_label": "Shop Bestsellers", "btn2_label": "Our Story" } },
+        "trust":     { "type": "trust_row", "settings": { "show_rating": true, "item1": "GMP Certified", "item2": "FSSAI Licensed", "item3": "Free Shipping ₹499+" } }
+      },
+      "block_order": ["badge","heading","subheading","buttons","trust"],
+      "settings": { "bg_color": "#F9F4EE", "min_height_desktop": 620, "min_height_mobile": 500, "overlay_opacity": 30 }
+    },
+    "usp_strip": {
+      "type": "hindrishi-usp-strip",
+      "blocks": {
+        "usp1": { "type": "usp", "settings": { "icon_emoji": "🌿", "title": "100% Ayurvedic", "subtitle": "Authentic herbal formulations", "icon_bg": "#DBE9E0" } },
+        "usp2": { "type": "usp", "settings": { "icon_emoji": "🏭", "title": "GMP Certified",  "subtitle": "Quality you can trust",        "icon_bg": "#FFDFB8" } },
+        "usp3": { "type": "usp", "settings": { "icon_emoji": "🧪", "title": "Lab Tested",     "subtitle": "Verified purity & safety",      "icon_bg": "#DBE9E0" } },
+        "usp4": { "type": "usp", "settings": { "icon_emoji": "👨‍👩‍👧","title": "40,000+ Families","subtitle": "Trusted across India",        "icon_bg": "#FFDFB8" } }
+      },
+      "block_order": ["usp1","usp2","usp3","usp4"],
+      "settings": { "bg_color": "#ffffff", "padding_top": 40, "padding_bottom": 40 }
+    },
+    "bestsellers": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "Our Bestselling Products",
         "heading_size": "h2",
-        "description": "",
-        "show_description": false,
+        "description": "Trusted by 40,000+ families across India. Rooted in Ayurveda, tested in labs.",
+        "show_description": true,
         "description_style": "body",
         "collection": "all",
         "products_to_show": 4,
         "columns_desktop": 4,
         "full_width": false,
-        "show_view_all": false,
+        "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
         "color_scheme": "scheme-1",
@@ -58,17 +59,77 @@
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
+        "show_rating": true,
+        "quick_add": "standard",
         "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 32,
-        "padding_bottom": 36
+        "swipe_on_mobile": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "why_us": {
+      "type": "hindrishi-why-us",
+      "blocks": {
+        "f1": { "type": "item", "settings": { "icon_emoji": "🌿", "title": "Authentic Ayurvedic Formula",   "description": "Every ingredient is carefully selected based on classical Ayurvedic texts. No shortcuts — just pure, traditional wisdom in every product.", "icon_bg": "#DBE9E0", "icon_color": "#2D5A27" } },
+        "f2": { "type": "item", "settings": { "icon_emoji": "🏭", "title": "GMP Certified Manufacturing",  "description": "Manufactured in GMP-certified facilities with strict quality controls. Each batch tested for purity and potency before reaching you.", "icon_bg": "#FFDFB8", "icon_color": "#8B5E3C" } },
+        "f3": { "type": "item", "settings": { "icon_emoji": "🧪", "title": "Lab Tested for Safety",        "description": "Every formulation undergoes rigorous third-party lab testing. Free from heavy metals, harmful chemicals, and adulterants.", "icon_bg": "#DBE9E0", "icon_color": "#2D5A27" } },
+        "f4": { "type": "item", "settings": { "icon_emoji": "🇮🇳","title": "Made in India, For India",    "description": "We understand Indian lifestyles, dietary habits, and wellness needs. Specifically designed for Indian body types.", "icon_bg": "#FFDFB8", "icon_color": "#8B5E3C" } },
+        "f5": { "type": "item", "settings": { "icon_emoji": "🚫", "title": "No Harmful Additives",         "description": "No artificial colors, flavors, or preservatives. What you see on the label is what goes into your body.", "icon_bg": "#DBE9E0", "icon_color": "#2D5A27" } },
+        "f6": { "type": "item", "settings": { "icon_emoji": "💚", "title": "Customer-First Support",       "description": "Your wellness journey matters to us. Our dedicated team is always ready to answer questions and support your health goals.", "icon_bg": "#FFDFB8", "icon_color": "#8B5E3C" } }
+      },
+      "block_order": ["f1","f2","f3","f4","f5","f6"],
+      "settings": { "tag": "Why Choose Us", "heading": "The Hindrishi Promise", "description": "We don't just sell Ayurvedic products. We bring you 5,000 years of healing wisdom, backed by modern science, manufactured to GMP standards, and tested in certified labs — so every product you receive is safe, effective, and authentic.", "cta_label": "Shop All Products", "bg_color": "#ffffff", "padding_top": 80, "padding_bottom": 80 }
+    },
+    "testimonials": {
+      "type": "hindrishi-testimonials",
+      "blocks": {
+        "r1": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "Pehli baar kisi product ne itni jaldi relief diya", "review": "I was feeling very heavy after meals and had zero energy. Started taking this syrup and within 3 weeks, I'm feeling so much lighter. Digestion has improved a lot. Very happy with results.", "author_name": "Rajesh Kumar", "author_location": "Delhi", "product": "Liv-Revive Liver Syrup" } },
+        "r2": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "My doctor suggested Ayurvedic and I chose Hindrishi", "review": "Instead of going for heavy medicines, I wanted something natural. This syrup has been amazing. No side effects, and I definitely feel the difference in my overall energy and appetite.", "author_name": "Priya Sharma", "author_location": "Mumbai", "product": "Liv-Revive Liver Syrup" } },
+        "r3": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "The self-care ritual I always needed", "review": "Between work and family, I never took time for myself. This oil changed that. My skin is softer but honestly, the mental wellness benefit is even better. Thank you Hindrishi.", "author_name": "Meera Nair", "author_location": "Chennai", "product": "Breast Care Oil" } },
+        "r4": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "Natural support that actually works", "review": "Been using for 2 months consistently and my overall wellness has improved. No more that heavy, tired feeling. I appreciate that it's all natural herbs. Highly recommend.", "author_name": "Dr. Amit Verma", "author_location": "Bangalore", "product": "Kidney Wellness Support" } },
+        "r5": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "Ayurvedic solution that actually works", "review": "Mujhe chemical treatments se dar lagta tha. This natural formula gave me confidence to try. Seeing visible difference in 4 weeks. Will definitely recommend to everyone.", "author_name": "Rahul Sharma", "author_location": "Delhi", "product": "Wart Remover" } },
+        "r6": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "Family mein sabko suggest kiya hai", "review": "My husband has a very irregular lifestyle — late night work, outside food, stress. This syrup has helped him so much. Now I've ordered for my parents also. Pure Ayurvedic hai toh trust banta hai.", "author_name": "Sneha Patil", "author_location": "Pune", "product": "Liv-Revive Liver Syrup" } }
+      },
+      "block_order": ["r1","r2","r3","r4","r5","r6"],
+      "settings": { "tag": "What Customers Say", "heading": "Real Results, Real People", "subheading": "Join 40,000+ families who trust Hindrishi Ayurveda for their daily wellness", "bg_color": "#F9F4EE", "padding_top": 80, "padding_bottom": 80 }
+    },
+    "faq": {
+      "type": "hindrishi-faq-home",
+      "blocks": {
+        "q1": { "type": "faq", "settings": { "question": "Are Hindrishi products safe for daily use?", "answer": "<p>Yes. All our products are 100% Ayurvedic formulations made with natural herbs and manufactured in GMP-certified facilities. They are designed for regular daily use. However, if you have existing medical conditions or are on medication, we recommend consulting your doctor before starting any new supplement.</p>" } },
+        "q2": { "type": "faq", "settings": { "question": "How long does it take to see results?", "answer": "<p>Ayurvedic wellness works gradually and naturally. Most customers notice improvements within 3–4 weeks of consistent daily use. For comprehensive results, we recommend using our products for at least 8–12 weeks. Consistency and lifestyle support (diet, hydration, sleep) amplify results.</p>" } },
+        "q3": { "type": "faq", "settings": { "question": "Do you offer Cash on Delivery (COD)?", "answer": "<p>Yes, we offer COD across India. Pay only when you receive the product at your doorstep. We also encourage prepaid orders (UPI/Card/Net Banking) — prepaid customers enjoy priority dispatch, faster delivery, and exclusive discounts of up to ₹70 off.</p>" } },
+        "q4": { "type": "faq", "settings": { "question": "Are your products certified?", "answer": "<p>Absolutely. All Hindrishi products are FSSAI licensed, manufactured in GMP-certified facilities, AYUSH compliant, and undergo third-party lab testing for purity and safety. We maintain the highest quality standards at every step of manufacturing.</p>" } },
+        "q5": { "type": "faq", "settings": { "question": "How fast is delivery?", "answer": "<p>We typically dispatch orders within 24–48 hours. Delivery takes 3–7 business days depending on your location. Metro cities receive faster delivery. Prepaid orders always get priority dispatch for even faster delivery.</p>" } },
+        "q6": { "type": "faq", "settings": { "question": "Are Hindrishi products 100% vegetarian?", "answer": "<p>Yes, all Hindrishi products are 100% vegetarian. All ingredients are plant-based. No animal-derived ingredients are used, and we are committed to cruelty-free practices — no animal testing, ever.</p>" } }
+      },
+      "block_order": ["q1","q2","q3","q4","q5","q6"],
+      "settings": { "tag": "FAQ", "heading": "Frequently Asked Questions", "subheading": "Everything you need to know about our Ayurvedic products", "bg_color": "#F9F4EE", "cta_text": "Still have questions? We're here to help.", "cta_label": "Contact Us", "padding_top": 80, "padding_bottom": 80 }
+    },
+    "newsletter": {
+      "type": "email-signup-banner",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "heading": "Join the Hindrishi Wellness Community",
+        "heading_scale": 100,
+        "button_label": "Subscribe",
+        "show_background_image": false,
+        "image_height": "small",
+        "image_behavior": "none",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     }
   },
   "order": [
-    "image-with-text",
-    "featured_collection"
+    "trust_strip",
+    "hero",
+    "usp_strip",
+    "bestsellers",
+    "why_us",
+    "testimonials",
+    "faq",
+    "newsletter"
   ]
 }

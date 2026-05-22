@@ -1,0 +1,156 @@
+{{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .hwhy-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .hwhy-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="hwhy hwhy-{{ section.id }}" style="background:{{ section.settings.bg_color }};">
+  <div class="page-width">
+    <div class="hwhy__layout">
+
+      <div class="hwhy__left {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}">
+        <span class="hindrishi-section-tag">{{ section.settings.tag }}</span>
+        <h2 class="hindrishi-section-heading">{{ section.settings.heading }}</h2>
+        <div class="hindrishi-divider hindrishi-divider--left"></div>
+        <p class="hindrishi-section-subheading">{{ section.settings.description }}</p>
+
+        {%- if section.settings.cta_label != blank -%}
+          <div style="margin-top:32px;">
+            <a href="{{ section.settings.cta_link }}" class="hindrishi-btn-primary">
+              {{ section.settings.cta_label }}
+            </a>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.image != blank -%}
+          <div class="hwhy__img-wrap">
+            {{
+              section.settings.image
+              | image_url: width: 600
+              | image_tag: loading: 'lazy', class: 'hwhy__img', alt: section.settings.image.alt | escape
+            }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <ul class="hwhy__list" role="list">
+        {%- for block in section.blocks -%}
+          <li class="hwhy__item {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}" {{ block.shopify_attributes }}>
+            <div class="hwhy__icon" style="background:{{ block.settings.icon_bg }};color:{{ block.settings.icon_color }};">
+              {%- if block.settings.icon_image != blank -%}
+                {{
+                  block.settings.icon_image
+                  | image_url: width: 48
+                  | image_tag: loading: 'lazy', alt: block.settings.title, class: 'hwhy__icon-img'
+                }}
+              {%- else -%}
+                <span aria-hidden="true">{{ block.settings.icon_emoji }}</span>
+              {%- endif -%}
+            </div>
+            <div class="hwhy__item-body">
+              <h3 class="hwhy__item-title">{{ block.settings.title }}</h3>
+              <p class="hwhy__item-desc">{{ block.settings.description }}</p>
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .hwhy__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media screen and (min-width: 990px) {
+    .hwhy__layout { grid-template-columns: 1fr 1.25fr; gap: 80px; }
+  }
+  .hwhy__img-wrap { margin-top: 36px; }
+  .hwhy__img {
+    width: 100%;
+    border-radius: var(--hindrishi-radius-lg);
+    box-shadow: var(--hindrishi-shadow-md);
+  }
+  .hwhy__list {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 24px;
+  }
+  .hwhy__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .hwhy__icon {
+    width: 52px; height: 52px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.4rem;
+    flex-shrink: 0;
+  }
+  .hwhy__icon-img { width: 26px; height: 26px; object-fit: contain; }
+  .hwhy__item-title {
+    font-size: 1.6rem; font-weight: 700;
+    color: var(--hindrishi-text-dark);
+    margin: 0 0 6px;
+  }
+  .hwhy__item-desc {
+    font-size: 1.4rem;
+    color: var(--hindrishi-text-medium);
+    line-height: 1.6;
+    margin: 0;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Why Hindrishi",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text",         "id": "tag",         "label": "Section Tag", "default": "Why Choose Us" },
+    { "type": "text",         "id": "heading",     "label": "Heading",     "default": "The Hindrishi Promise" },
+    { "type": "textarea",     "id": "description", "label": "Description", "default": "We don't just sell Ayurvedic products. We bring you 5,000 years of healing wisdom, backed by modern science, manufactured to GMP standards, and tested in certified labs — so every product is safe, effective, and authentic." },
+    { "type": "text",         "id": "cta_label",   "label": "CTA Label",   "default": "Shop All Products" },
+    { "type": "url",          "id": "cta_link",    "label": "CTA Link" },
+    { "type": "image_picker", "id": "image",       "label": "Left Image (optional)" },
+    { "type": "color",        "id": "bg_color",    "label": "Background",  "default": "#ffffff" },
+    { "type": "range", "id": "padding_top",    "label": "Padding Top",    "min": 40, "max": 120, "step": 8, "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding Bottom", "min": 40, "max": 120, "step": 8, "default": 80 }
+  ],
+  "blocks": [{
+    "type": "item", "name": "Feature Item",
+    "settings": [
+      { "type": "image_picker", "id": "icon_image",  "label": "Icon Image (opt)" },
+      { "type": "text",         "id": "icon_emoji",  "label": "Icon Emoji",        "default": "🌿" },
+      { "type": "color",        "id": "icon_bg",     "label": "Icon Background",   "default": "#DBE9E0" },
+      { "type": "color",        "id": "icon_color",  "label": "Icon Color",        "default": "#2D5A27" },
+      { "type": "text",         "id": "title",       "label": "Title",             "default": "Feature" },
+      { "type": "textarea",     "id": "description", "label": "Description" }
+    ]
+  }],
+  "presets": [{
+    "name": "Why Hindrishi",
+    "blocks": [
+      { "type": "item", "settings": { "icon_emoji": "🌿", "title": "Authentic Ayurvedic Formula",    "description": "Every ingredient is carefully selected based on classical Ayurvedic texts. No shortcuts — just pure, traditional wisdom in every product.", "icon_bg": "#DBE9E0", "icon_color": "#2D5A27" } },
+      { "type": "item", "settings": { "icon_emoji": "🏭", "title": "GMP Certified Manufacturing",   "description": "Manufactured in GMP-certified facilities with strict quality controls. Each batch tested for purity and potency before reaching you.", "icon_bg": "#FFDFB8", "icon_color": "#8B5E3C" } },
+      { "type": "item", "settings": { "icon_emoji": "🧪", "title": "Lab Tested for Safety",         "description": "Every formulation undergoes rigorous third-party lab testing. Free from heavy metals, harmful chemicals, and adulterants.", "icon_bg": "#DBE9E0", "icon_color": "#2D5A27" } },
+      { "type": "item", "settings": { "icon_emoji": "🇮🇳", "title": "Made in India, For India",    "description": "We understand Indian lifestyles, dietary habits, and wellness needs. Specifically designed for Indian body types.", "icon_bg": "#FFDFB8", "icon_color": "#8B5E3C" } },
+      { "type": "item", "settings": { "icon_emoji": "🚫", "title": "No Harmful Additives",          "description": "No artificial colors, flavors, or preservatives. What you see on the label is what goes into your body — nothing hidden, nothing harmful.", "icon_bg": "#DBE9E0", "icon_color": "#2D5A27" } },
+      { "type": "item", "settings": { "icon_emoji": "💚", "title": "Customer-First Support",        "description": "Your wellness journey matters to us. Our dedicated team is always ready to answer questions and support your health goals.", "icon_bg": "#FFDFB8", "icon_color": "#8B5E3C" } }
+    ]
+  }]
+}
+{% endschema %}

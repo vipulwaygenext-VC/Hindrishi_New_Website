@@ -1,0 +1,276 @@
+{{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .hhero-{{ section.id }} {
+    background: {{ section.settings.bg_color }};
+    min-height: {{ section.settings.min_height_mobile }}px;
+  }
+  @media screen and (min-width: 990px) {
+    .hhero-{{ section.id }} { min-height: {{ section.settings.min_height_desktop }}px; }
+  }
+{%- endstyle -%}
+
+<section class="hhero hhero-{{ section.id }}" id="HHero-{{ section.id }}">
+
+  {%- if section.settings.bg_image != blank -%}
+    <div class="hhero__bg-wrap">
+      {{
+        section.settings.bg_image
+        | image_url: width: 1800
+        | image_tag: loading: 'eager', fetchpriority: 'high', class: 'hhero__bg-img', alt: ''
+      }}
+      <div class="hhero__overlay" style="opacity:{{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
+    </div>
+  {%- endif -%}
+
+  <div class="page-width hhero__inner">
+
+    <div class="hhero__content">
+      {%- for block in section.blocks -%}
+
+        {%- case block.type -%}
+
+          {%- when 'badge' -%}
+            <div class="hhero__badge {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--fade-in{% endif %}" {{ block.shopify_attributes }}>
+              <span class="hindrishi-badge hindrishi-badge--green">
+                {{ block.settings.icon }} {{ block.settings.text }}
+              </span>
+            </div>
+
+          {%- when 'heading' -%}
+            <h1 class="hhero__heading {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}"
+                style="color:{{ block.settings.color }};"
+                {{ block.shopify_attributes }}>
+              {{ block.settings.heading }}
+            </h1>
+
+          {%- when 'subheading' -%}
+            <p class="hhero__sub {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}"
+               style="color:{{ block.settings.color }};"
+               {{ block.shopify_attributes }}>
+              {{ block.settings.text }}
+            </p>
+
+          {%- when 'buttons' -%}
+            <div class="hhero__btns {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}" {{ block.shopify_attributes }}>
+              {%- if block.settings.btn1_label != blank -%}
+                <a href="{{ block.settings.btn1_link }}" class="hindrishi-btn-primary">
+                  {{ block.settings.btn1_label }}
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              {%- endif -%}
+              {%- if block.settings.btn2_label != blank -%}
+                <a href="{{ block.settings.btn2_link }}" class="hindrishi-btn-secondary">{{ block.settings.btn2_label }}</a>
+              {%- endif -%}
+            </div>
+
+          {%- when 'trust_row' -%}
+            <div class="hhero__trust {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--fade-in{% endif %}" {{ block.shopify_attributes }}>
+              {%- if block.settings.show_rating -%}
+                <div class="hhero__trust-item">
+                  <div class="hindrishi-stars">★★★★★</div>
+                  <span class="hhero__trust-label">4.6/5 · 3,200+ Reviews</span>
+                </div>
+                <span class="hhero__trust-sep" aria-hidden="true">|</span>
+              {%- endif -%}
+              {%- assign items = block.settings.item1 | append: '||' | append: block.settings.item2 | append: '||' | append: block.settings.item3 | split: '||' -%}
+              {%- for item in items -%}
+                {%- unless item == blank -%}
+                  <div class="hhero__trust-item">{{ item }}</div>
+                  {%- unless forloop.last -%}<span class="hhero__trust-sep" aria-hidden="true">|</span>{%- endunless -%}
+                {%- endunless -%}
+              {%- endfor -%}
+            </div>
+
+        {%- endcase -%}
+
+      {%- endfor -%}
+    </div>
+
+    {%- assign img_block = section.blocks | where: 'type', 'product_image' | first -%}
+    {%- if img_block != blank and img_block.settings.image != blank -%}
+      <div class="hhero__product-col {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}">
+        {{
+          img_block.settings.image
+          | image_url: width: 800
+          | image_tag: loading: 'eager', class: 'hhero__product-img', alt: img_block.settings.image.alt | escape
+        }}
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+<style>
+  .hhero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .hhero__bg-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hhero__bg-img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+  }
+  .hhero__overlay {
+    position: absolute; inset: 0;
+    background: #000;
+  }
+  .hhero__inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media screen and (min-width: 990px) {
+    .hhero__inner {
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      padding-top: 90px;
+      padding-bottom: 90px;
+    }
+  }
+  .hhero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .hhero__heading {
+    font-size: clamp(3rem, 5.5vw, 5.4rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  .hhero__heading em {
+    font-style: normal;
+    color: var(--hindrishi-green);
+  }
+  .hhero__sub {
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
+    line-height: 1.65;
+    margin: 0;
+    max-width: 520px;
+  }
+  .hhero__btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .hhero__trust {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+  .hhero__trust-item {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--hindrishi-text-medium);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .hhero__trust-label { font-size: 1.3rem; color: var(--hindrishi-text-light); }
+  .hhero__trust-sep { color: var(--hindrishi-border); font-size: 1.2rem; }
+  .hhero__product-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hhero__product-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 520px;
+    object-fit: contain;
+    filter: drop-shadow(0 24px 48px rgba(45,90,39,0.22));
+  }
+  @media screen and (max-width: 749px) {
+    .hhero__trust-sep { display: none; }
+    .hhero__trust { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Hindrishi Hero",
+  "tag": "section",
+  "class": "section hindrishi-hero-section",
+  "settings": [
+    { "type": "color",       "id": "bg_color",           "label": "Background Color",      "default": "#F9F4EE" },
+    { "type": "image_picker","id": "bg_image",            "label": "Background Image (opt)" },
+    { "type": "range",       "id": "overlay_opacity",     "label": "Image Overlay %",       "min": 0, "max": 80, "step": 5,  "default": 30 },
+    { "type": "range",       "id": "min_height_desktop",  "label": "Min Height Desktop px", "min": 400, "max": 900, "step": 50, "default": 620 },
+    { "type": "range",       "id": "min_height_mobile",   "label": "Min Height Mobile px",  "min": 300, "max": 700, "step": 50, "default": 500 }
+  ],
+  "blocks": [
+    {
+      "type": "badge", "name": "Badge", "limit": 1,
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Icon Emoji", "default": "🌿" },
+        { "type": "text", "id": "text", "label": "Badge Text",  "default": "5,000 Years of Ayurvedic Wisdom" }
+      ]
+    },
+    {
+      "type": "heading", "name": "Heading", "limit": 1,
+      "settings": [
+        { "type": "richtext", "id": "heading", "label": "Heading", "default": "<p>Ancient Wisdom.<br><em>Modern Wellness.</em></p>" },
+        { "type": "color",    "id": "color",   "label": "Text Color", "default": "#1C1C1C" }
+      ]
+    },
+    {
+      "type": "subheading", "name": "Subheading", "limit": 1,
+      "settings": [
+        { "type": "textarea", "id": "text",  "label": "Subheading", "default": "Premium herbal formulations crafted from time-tested Ayurvedic ingredients. GMP certified. Lab tested. Trusted by 40,000+ families across India." },
+        { "type": "color",    "id": "color", "label": "Text Color", "default": "#4A4A4A" }
+      ]
+    },
+    {
+      "type": "buttons", "name": "Buttons", "limit": 1,
+      "settings": [
+        { "type": "text", "id": "btn1_label", "label": "Primary Button",   "default": "Shop Bestsellers" },
+        { "type": "url",  "id": "btn1_link",  "label": "Primary Link" },
+        { "type": "text", "id": "btn2_label", "label": "Secondary Button", "default": "Our Story" },
+        { "type": "url",  "id": "btn2_link",  "label": "Secondary Link" }
+      ]
+    },
+    {
+      "type": "trust_row", "name": "Trust Row", "limit": 1,
+      "settings": [
+        { "type": "checkbox", "id": "show_rating", "label": "Show Star Rating", "default": true },
+        { "type": "text", "id": "item1", "label": "Trust Item 1", "default": "GMP Certified" },
+        { "type": "text", "id": "item2", "label": "Trust Item 2", "default": "FSSAI Licensed" },
+        { "type": "text", "id": "item3", "label": "Trust Item 3", "default": "Free Shipping ₹499+" }
+      ]
+    },
+    {
+      "type": "product_image", "name": "Hero Image", "limit": 1,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Hero / Product Image" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Hindrishi Hero",
+    "blocks": [
+      { "type": "badge" },
+      { "type": "heading" },
+      { "type": "subheading" },
+      { "type": "buttons" },
+      { "type": "trust_row" }
+    ]
+  }]
+}
+{% endschema %}

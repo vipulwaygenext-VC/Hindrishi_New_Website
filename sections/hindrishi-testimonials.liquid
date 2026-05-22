@@ -1,0 +1,222 @@
+{{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .htesti-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .htesti-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="htesti htesti-{{ section.id }}" style="background:{{ section.settings.bg_color }};">
+  <div class="page-width">
+
+    <div class="htesti__header {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}">
+      <span class="hindrishi-section-tag">{{ section.settings.tag }}</span>
+      <h2 class="hindrishi-section-heading">{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="hindrishi-section-subheading" style="margin:0 auto;">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+      <div class="hindrishi-divider"></div>
+      <div class="htesti__aggregate">
+        <span class="hindrishi-stars">★★★★★</span>
+        <span class="htesti__aggregate-text">
+          <strong>4.6/5</strong> average · <strong>3,200+</strong> verified reviews
+        </span>
+      </div>
+    </div>
+
+    <ul class="htesti__grid" role="list">
+      {%- for block in section.blocks -%}
+        <li class="htesti__card {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}" {{ block.shopify_attributes }}>
+
+          <div class="htesti__top">
+            <span class="hindrishi-stars">
+              {%- for i in (1..block.settings.rating) -%}★{%- endfor -%}
+              {%- assign empty = 5 | minus: block.settings.rating -%}
+              {%- for i in (1..empty) -%}<span style="opacity:.3">★</span>{%- endfor -%}
+            </span>
+            {%- if block.settings.verified -%}
+              <span class="htesti__verified">✓ Verified</span>
+            {%- endif -%}
+          </div>
+
+          {%- if block.settings.title != blank -%}
+            <h3 class="htesti__title">"{{ block.settings.title }}"</h3>
+          {%- endif -%}
+
+          <p class="htesti__text">{{ block.settings.review }}</p>
+
+          <div class="htesti__author">
+            {%- if block.settings.author_image != blank -%}
+              {{
+                block.settings.author_image
+                | image_url: width: 60
+                | image_tag: loading: 'lazy', class: 'htesti__author-img', alt: block.settings.author_name
+              }}
+            {%- else -%}
+              <div class="htesti__author-avatar">{{ block.settings.author_name | slice: 0 }}</div>
+            {%- endif -%}
+            <div>
+              <div class="htesti__author-name">{{ block.settings.author_name }}</div>
+              <div class="htesti__author-loc">{{ block.settings.author_location }}</div>
+            </div>
+          </div>
+
+          {%- if block.settings.product != blank -%}
+            <div class="htesti__product-tag">Re: {{ block.settings.product }}</div>
+          {%- endif -%}
+
+        </li>
+      {%- endfor -%}
+    </ul>
+
+  </div>
+</div>
+
+<style>
+  .htesti__header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .htesti__aggregate {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--hindrishi-green-pale);
+    padding: 10px 20px;
+    border-radius: var(--hindrishi-radius-pill);
+    margin-top: 8px;
+  }
+  .htesti__aggregate-text {
+    font-size: 1.4rem;
+    color: var(--hindrishi-text-medium);
+  }
+  .htesti__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+  @media screen and (min-width: 750px)  { .htesti__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media screen and (min-width: 990px)  { .htesti__grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .htesti__card {
+    background: #fff;
+    border: 1px solid var(--hindrishi-border);
+    border-radius: var(--hindrishi-radius-md);
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: var(--hindrishi-shadow-card);
+    transition: box-shadow .2s, transform .2s;
+  }
+  .htesti__card:hover {
+    box-shadow: var(--hindrishi-shadow-md);
+    transform: translateY(-2px);
+  }
+  .htesti__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .htesti__verified {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--hindrishi-success);
+  }
+  .htesti__title {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--hindrishi-text-dark);
+    line-height: 1.3;
+    margin: 0;
+  }
+  .htesti__text {
+    font-size: 1.4rem;
+    color: var(--hindrishi-text-medium);
+    line-height: 1.65;
+    flex-grow: 1;
+    margin: 0;
+  }
+  .htesti__author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--hindrishi-border-light);
+    margin-top: auto;
+  }
+  .htesti__author-img {
+    width: 42px; height: 42px;
+    border-radius: 50%; object-fit: cover;
+  }
+  .htesti__author-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: var(--hindrishi-green-pale);
+    color: var(--hindrishi-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    text-transform: uppercase;
+  }
+  .htesti__author-name { font-size: 1.4rem; font-weight: 700; color: var(--hindrishi-text-dark); }
+  .htesti__author-loc  { font-size: 1.2rem; color: var(--hindrishi-text-light); }
+  .htesti__product-tag {
+    font-size: 1.2rem;
+    color: var(--hindrishi-green);
+    font-weight: 600;
+    font-style: italic;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text",  "id": "tag",        "label": "Section Tag",   "default": "What Customers Say" },
+    { "type": "text",  "id": "heading",    "label": "Heading",       "default": "Real Results, Real People" },
+    { "type": "text",  "id": "subheading", "label": "Subheading",    "default": "Join 40,000+ families who trust Hindrishi Ayurveda for their daily wellness" },
+    { "type": "color", "id": "bg_color",   "label": "Background",    "default": "#F9F4EE" },
+    { "type": "range", "id": "padding_top",    "label": "Padding Top",    "min": 40, "max": 120, "step": 8, "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding Bottom", "min": 40, "max": 120, "step": 8, "default": 80 }
+  ],
+  "blocks": [{
+    "type": "review", "name": "Review",
+    "settings": [
+      { "type": "range",        "id": "rating",          "label": "Rating (stars)",    "min": 1, "max": 5, "step": 1, "default": 5 },
+      { "type": "checkbox",     "id": "verified",        "label": "Verified Purchase", "default": true },
+      { "type": "text",         "id": "title",           "label": "Review Title" },
+      { "type": "textarea",     "id": "review",          "label": "Review Text" },
+      { "type": "image_picker", "id": "author_image",    "label": "Author Photo (opt)" },
+      { "type": "text",         "id": "author_name",     "label": "Author Name",       "default": "Customer" },
+      { "type": "text",         "id": "author_location", "label": "Location",          "default": "India" },
+      { "type": "text",         "id": "product",         "label": "Product (optional)" }
+    ]
+  }],
+  "presets": [{
+    "name": "Testimonials",
+    "blocks": [
+      { "type": "review", "settings": { "rating": 5, "title": "Pehli baar kisi product ne itni jaldi relief diya", "review": "I was feeling very heavy after meals and had zero energy. Started taking this syrup and within 3 weeks, I'm feeling so much lighter. Digestion has improved a lot. Very happy with results.", "author_name": "Rajesh Kumar", "author_location": "Delhi", "product": "Liv-Revive Liver Syrup", "verified": true } },
+      { "type": "review", "settings": { "rating": 5, "title": "My doctor suggested Ayurvedic and I chose Hindrishi", "review": "Instead of going for heavy medicines, I wanted something natural. This syrup has been amazing. No side effects, and I definitely feel the difference in my overall energy and appetite.", "author_name": "Priya Sharma", "author_location": "Mumbai", "product": "Liv-Revive Liver Syrup", "verified": true } },
+      { "type": "review", "settings": { "rating": 5, "title": "The self-care ritual I needed", "review": "Between work and family, I never took time for myself. This oil has changed that. My skin is softer but honestly, the mental wellness benefit is even better. Thank you Hindrishi.", "author_name": "Meera Nair", "author_location": "Chennai", "product": "Breast Care Oil", "verified": true } },
+      { "type": "review", "settings": { "rating": 5, "title": "Quality Ayurvedic care", "review": "Been using for 2 months consistently and my overall wellness has improved. No more that heavy, tired feeling. I appreciate that it's all natural herbs. Highly recommend.", "author_name": "Dr. Amit Verma", "author_location": "Bangalore", "product": "Kidney Wellness Support", "verified": true } },
+      { "type": "review", "settings": { "rating": 5, "title": "Ayurvedic solution that actually works", "review": "Mujhe chemical treatments se dar lagta tha. This natural formula gave me confidence to try. Application is very precise. Seeing visible difference in 4 weeks. Will definitely recommend.", "author_name": "Rahul Sharma", "author_location": "Delhi", "product": "Wart Remover", "verified": true } },
+      { "type": "review", "settings": { "rating": 5, "title": "Oily khane ke baad ab woh bharipan nahi rehta", "review": "Mujhe toh lagta tha ki yeh permanent problem hai. But after using this for 2 months regularly, I can eat normal food without feeling that uncomfortable heaviness. Good product at good price.", "author_name": "Amit Verma", "author_location": "Bangalore", "product": "Liv-Revive Liver Syrup", "verified": true } }
+    ]
+  }]
+}
+{% endschema %}
