@@ -1,0 +1,114 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title":            { "type": "title",    "settings": {} },
+        "rating":           { "type": "rating",   "settings": {} },
+        "price":            { "type": "price",    "settings": {} },
+        "urgency": {
+          "type": "hindrishi_urgency",
+          "settings": { "text": "🔥 63 people bought this in the last 24 hours · Best Seller in Liver Health" }
+        },
+        "variant_picker":   { "type": "variant_picker",   "settings": { "picker_type": "button", "swatch_shape": "circle" } },
+        "quantity_selector":{ "type": "quantity_selector","settings": {} },
+        "prepaid": {
+          "type": "hindrishi_prepaid",
+          "settings": {
+            "title": "Pay Online & Save More",
+            "discount_label": "Save ₹50",
+            "description": "Use UPI, Card, or Net Banking at checkout. COD also available pan India."
+          }
+        },
+        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": true, "show_gift_card_recipient": false } },
+        "trust_badges": {
+          "type": "hindrishi_trust",
+          "settings": {
+            "icon1": "🌿", "badge1": "100% Ayurvedic Herbs",
+            "icon2": "🏭", "badge2": "GMP Certified",
+            "icon3": "🧪", "badge3": "Lab Tested & Safe",
+            "icon4": "🚚", "badge4": "Free Shipping ₹499+"
+          }
+        },
+        "description": { "type": "description", "settings": {} },
+        "share":       { "type": "share",       "settings": { "share_label": "Share" } }
+      },
+      "block_order": ["title","rating","price","urgency","variant_picker","quantity_selector","prepaid","buy_buttons","trust_badges","description","share"],
+      "settings": { "enable_sticky_info": true, "color_scheme": "scheme-1", "media_size": "medium", "constrain_to_viewport": true, "media_fit": "contain", "gallery_layout": "thumbnail", "mobile_thumbnails": "show", "media_position": "left", "image_zoom": "lightbox", "hide_variants": false, "enable_video_looping": false, "padding_top": 28, "padding_bottom": 0 }
+    },
+    "certifications": {
+      "type": "hindrishi-certifications",
+      "blocks": {
+        "c1": { "type": "cert", "settings": { "icon": "🌿", "icon_bg": "#DBE9E0", "label": "100% Ayurvedic Formula" } },
+        "c2": { "type": "cert", "settings": { "icon": "🏭", "icon_bg": "#FFDFB8", "label": "GMP Certified Facility" } },
+        "c3": { "type": "cert", "settings": { "icon": "🧪", "icon_bg": "#DBE9E0", "label": "Lab Tested for Purity" } },
+        "c4": { "type": "cert", "settings": { "icon": "📋", "icon_bg": "#FFDFB8", "label": "FSSAI Licensed" } },
+        "c5": { "type": "cert", "settings": { "icon": "🇮🇳", "icon_bg": "#DBE9E0", "label": "Made in India" } }
+      },
+      "block_order": ["c1","c2","c3","c4","c5"],
+      "settings": { "bg_color": "#ffffff", "padding_top": 20 }
+    },
+    "how_it_works": {
+      "type": "hindrishi-how-it-works",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "emoji": "🥄", "title": "Take 10–15 ml Daily", "description": "Measure the recommended dose using the bottle cap. Best taken after breakfast or as directed on label." } },
+        "s2": { "type": "step", "settings": { "emoji": "💧", "title": "Mix with Warm Water", "description": "Mix with a glass of warm water or take directly. Consistent daily use at the same time each day gives best results." } },
+        "s3": { "type": "step", "settings": { "emoji": "🌱", "title": "Feel the Difference", "description": "Most customers notice improved digestion and energy in 3–4 weeks. For comprehensive liver support, use for 8–12 weeks." } }
+      },
+      "block_order": ["s1","s2","s3"],
+      "settings": { "tag": "How to Use", "heading": "Simple Daily Ritual", "subheading": "Just 3 easy steps for daily Ayurvedic liver support", "cta_label": "", "bg_color": "#F9F4EE", "padding_top": 64, "padding_bottom": 64 }
+    },
+    "benefits": {
+      "type": "hindrishi-product-benefits",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "icon_emoji": "🫀", "icon_bg": "#DBE9E0", "title": "Supports Liver Function", "description": "Classical Ayurvedic herbs like Bhumi Amla and Kutki are traditionally used to support healthy liver function and natural enzymatic activity.", "tag_label": "Liver Wellness" } },
+        "b2": { "type": "benefit", "settings": { "icon_emoji": "✨", "icon_bg": "#FFDFB8", "title": "Promotes Natural Detox", "description": "Supports the liver's natural detoxification pathways. Helps the body manage the everyday burden of processed foods and environmental exposure.", "tag_label": "Natural Detox" } },
+        "b3": { "type": "benefit", "settings": { "icon_emoji": "🍽️", "icon_bg": "#DBE9E0", "title": "Improves Digestive Comfort", "description": "Herbs like Kasni and Punarnava support healthy digestion and help ease the feeling of heaviness and bloating after meals.", "tag_label": "Digestive Support" } },
+        "b4": { "type": "benefit", "settings": { "icon_emoji": "⚡", "icon_bg": "#FFDFB8", "title": "Boosts Energy & Vitality", "description": "When the liver functions optimally, energy metabolism improves. Users often report feeling lighter, more energetic, and mentally sharper.", "tag_label": "Energy Support" } },
+        "b5": { "type": "benefit", "settings": { "icon_emoji": "🛡️", "icon_bg": "#DBE9E0", "title": "Supports Healthy Appetite", "description": "Bitter Ayurvedic herbs traditionally stimulate healthy digestive fire (Agni), helping normalize appetite and metabolic function.", "tag_label": "Appetite Balance" } },
+        "b6": { "type": "benefit", "settings": { "icon_emoji": "💚", "icon_bg": "#FFDFB8", "title": "100% Natural Formula", "description": "No artificial colors, flavors, or synthetic additives. Every ingredient is plant-based, tested in certified labs, and safe for daily use.", "tag_label": "Clean Formula" } }
+      },
+      "block_order": ["b1","b2","b3","b4","b5","b6"],
+      "settings": { "tag": "Key Benefits", "heading": "What Liv-Revive Supports", "subheading": "A complete Ayurvedic formula for liver health and daily wellness", "bg_color": "#ffffff", "padding_top": 64, "padding_bottom": 64 }
+    },
+    "ingredients": {
+      "type": "hindrishi-product-ingredients",
+      "blocks": {
+        "i1": { "type": "ingredient", "settings": { "emoji": "🌿", "name": "Bhumi Amla",  "sanskrit": "Phyllanthus niruri",      "benefit": "One of Ayurveda's most valued herbs for liver support. Helps maintain healthy liver enzyme levels and bile flow.", "purity": "100% Pure Extract" } },
+        "i2": { "type": "ingredient", "settings": { "emoji": "🍃", "name": "Kutki",       "sanskrit": "Picrorhiza kurroa",       "benefit": "Bitter herb prized in classical Ayurveda for its potent liver and digestive supportive properties.", "purity": "Standardized Extract" } },
+        "i3": { "type": "ingredient", "settings": { "emoji": "🌱", "name": "Kalmegh",     "sanskrit": "Andrographis paniculata", "benefit": "Supports liver cell wellness and healthy immune response. Widely used in Ayurvedic liver formulations.", "purity": "Tested Extract" } },
+        "i4": { "type": "ingredient", "settings": { "emoji": "🫚", "name": "Punarnava",   "sanskrit": "Boerhavia diffusa",       "benefit": "Supports natural fluid balance and kidney-liver function. Meaning 'that which renews' in Sanskrit.", "purity": "100% Pure" } },
+        "i5": { "type": "ingredient", "settings": { "emoji": "🌼", "name": "Kasni",       "sanskrit": "Cichorium intybus",       "benefit": "Chicory extract used in Unani and Ayurvedic traditions for digestive and liver support.", "purity": "Herbal Extract" } },
+        "i6": { "type": "ingredient", "settings": { "emoji": "🖤", "name": "Makoy",       "sanskrit": "Solanum nigrum",          "benefit": "Used in classical texts for liver and spleen wellness. Supports healthy bile secretion.", "purity": "Purified Extract" } }
+      },
+      "block_order": ["i1","i2","i3","i4","i5","i6"],
+      "settings": { "tag": "Key Ingredients", "heading": "6 Powerful Herbs, One Formula", "subheading": "Every ingredient sourced from trusted growers, tested for purity and potency", "bg_color": "#ffffff", "padding_top": 60, "padding_bottom": 60 }
+    },
+    "product_faq": {
+      "type": "hindrishi-product-faq",
+      "blocks": {
+        "q1": { "type": "faq", "settings": { "question": "What is the recommended dose of Liv-Revive Liver Syrup?", "answer": "<p>Take 10–15 ml (approximately 2–3 teaspoons) twice daily after meals, or as directed by your health practitioner. Mix with warm water for better absorption. Shake well before use.</p>" } },
+        "q2": { "type": "faq", "settings": { "question": "When will I start seeing results?", "answer": "<p>Ayurvedic formulations work gradually with the body's natural processes. Most customers notice improved digestion, reduced bloating, and increased energy within 3–4 weeks of consistent daily use. For comprehensive liver wellness support, we recommend a full 8–12 week course.</p>" } },
+        "q3": { "type": "faq", "settings": { "question": "Can I take Liv-Revive with my current medications?", "answer": "<p>Liv-Revive is made with 100% natural Ayurvedic herbs. However, if you are currently taking prescription medications — especially for liver, kidney, or thyroid conditions — please consult your physician before starting. Some herbs may interact with certain medications.</p>" } },
+        "q4": { "type": "faq", "settings": { "question": "Is this syrup safe for long-term daily use?", "answer": "<p>Yes. All ingredients in Liv-Revive are classical Ayurvedic herbs with a long history of safe daily use. The formula is manufactured in GMP-certified facilities and lab tested for safety before every batch is released. However, we recommend taking a break of 2–4 weeks after every 3-month course.</p>" } },
+        "q5": { "type": "faq", "settings": { "question": "Is it safe for diabetic individuals?", "answer": "<p>Liv-Revive contains no added sugar in its base. However, some herbal extracts may influence blood glucose metabolism. Diabetic individuals should consult their doctor before use and monitor levels regularly during the initial weeks.</p>" } },
+        "q6": { "type": "faq", "settings": { "question": "Can this be taken during pregnancy or breastfeeding?", "answer": "<p>We do not recommend taking Liv-Revive during pregnancy or breastfeeding without consulting a qualified Ayurvedic physician or your OB-GYN, as some herbs may not be suitable during these periods.</p>" } }
+      },
+      "block_order": ["q1","q2","q3","q4","q5","q6"],
+      "settings": { "tag": "FAQ", "heading": "Your Questions, Answered", "bg_color": "#F9F4EE", "padding_top": 60, "padding_bottom": 60 }
+    },
+    "testimonials": {
+      "type": "hindrishi-testimonials",
+      "blocks": {
+        "r1": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "Pehli baar kisi product ne itni jaldi relief diya", "review": "I was feeling very heavy after meals and had zero energy. Started taking this syrup and within 3 weeks, I'm feeling so much lighter. Digestion has improved a lot. Very happy with results.", "author_name": "Rajesh Kumar", "author_location": "Delhi", "product": "Liv-Revive Liver Syrup" } },
+        "r2": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "My doctor suggested Ayurvedic and I chose Hindrishi", "review": "Instead of going for heavy medicines, I wanted something natural. This syrup has been amazing. No side effects, and I definitely feel the difference in my overall energy and appetite.", "author_name": "Priya Sharma", "author_location": "Mumbai", "product": "Liv-Revive Liver Syrup" } },
+        "r3": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "Family mein sabko suggest kiya hai", "review": "My husband has a very irregular lifestyle — late night work, outside food, stress. This syrup has helped him so much. Now I've ordered for my parents also. Pure Ayurvedic hai toh trust banta hai.", "author_name": "Sneha Patil", "author_location": "Pune", "product": "Liv-Revive Liver Syrup" } }
+      },
+      "block_order": ["r1","r2","r3"],
+      "settings": { "tag": "Customer Reviews", "heading": "40,000+ Families Trust Hindrishi", "subheading": "Real results from real people across India", "bg_color": "#F9F4EE", "padding_top": 64, "padding_bottom": 64 }
+    },
+    "sticky_atc": { "type": "hindrishi-sticky-atc", "settings": { "btn_label": "Add to Cart", "show_prepaid_nudge": true, "prepaid_discount": "5" } },
+    "related-products": { "type": "related-products", "settings": { "heading": "Complete Your Wellness Routine", "heading_size": "h2", "products_to_show": 4, "columns_desktop": 4, "columns_mobile": "2", "color_scheme": "scheme-1", "image_ratio": "adapt", "image_shape": "default", "show_secondary_image": true, "show_vendor": false, "show_rating": true, "padding_top": 36, "padding_bottom": 60 } }
+  },
+  "order": ["main","certifications","how_it_works","benefits","ingredients","product_faq","testimonials","sticky_atc","related-products"]
+}

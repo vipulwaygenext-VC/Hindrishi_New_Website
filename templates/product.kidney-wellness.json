@@ -1,0 +1,109 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title":            { "type": "title",    "settings": {} },
+        "rating":           { "type": "rating",   "settings": {} },
+        "price":            { "type": "price",    "settings": {} },
+        "urgency": {
+          "type": "hindrishi_urgency",
+          "settings": { "text": "🔥 41 people bought this in the last 24 hours · Trusted for Kidney Wellness" }
+        },
+        "variant_picker":   { "type": "variant_picker",   "settings": { "picker_type": "button", "swatch_shape": "circle" } },
+        "quantity_selector":{ "type": "quantity_selector","settings": {} },
+        "prepaid": {
+          "type": "hindrishi_prepaid",
+          "settings": {
+            "title": "Pay Online & Save More",
+            "discount_label": "Save ₹50",
+            "description": "Use UPI, Card, or Net Banking at checkout. COD also available pan India."
+          }
+        },
+        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": true, "show_gift_card_recipient": false } },
+        "trust_badges": {
+          "type": "hindrishi_trust",
+          "settings": {
+            "icon1": "🌿", "badge1": "100% Ayurvedic",
+            "icon2": "🏭", "badge2": "GMP Certified",
+            "icon3": "🧪", "badge3": "Lab Tested Safe",
+            "icon4": "🚚", "badge4": "Free Shipping ₹499+"
+          }
+        },
+        "description": { "type": "description", "settings": {} },
+        "share":       { "type": "share",       "settings": { "share_label": "Share" } }
+      },
+      "block_order": ["title","rating","price","urgency","variant_picker","quantity_selector","prepaid","buy_buttons","trust_badges","description","share"],
+      "settings": { "enable_sticky_info": true, "color_scheme": "scheme-1", "media_size": "medium", "constrain_to_viewport": true, "media_fit": "contain", "gallery_layout": "thumbnail", "mobile_thumbnails": "show", "media_position": "left", "image_zoom": "lightbox", "hide_variants": false, "enable_video_looping": false, "padding_top": 28, "padding_bottom": 0 }
+    },
+    "certifications": {
+      "type": "hindrishi-certifications",
+      "blocks": {
+        "c1": { "type": "cert", "settings": { "icon": "🌿", "icon_bg": "#DBE9E0", "label": "100% Ayurvedic Formula" } },
+        "c2": { "type": "cert", "settings": { "icon": "🏭", "icon_bg": "#FFDFB8", "label": "GMP Certified Facility" } },
+        "c3": { "type": "cert", "settings": { "icon": "🧪", "icon_bg": "#DBE9E0", "label": "Lab Tested for Purity" } },
+        "c4": { "type": "cert", "settings": { "icon": "📋", "icon_bg": "#FFDFB8", "label": "FSSAI Licensed" } },
+        "c5": { "type": "cert", "settings": { "icon": "🇮🇳", "icon_bg": "#DBE9E0", "label": "Made in India" } }
+      },
+      "block_order": ["c1","c2","c3","c4","c5"],
+      "settings": { "bg_color": "#ffffff", "padding_top": 20 }
+    },
+    "how_it_works": {
+      "type": "hindrishi-how-it-works",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "emoji": "💊", "title": "Take as Directed", "description": "Take the recommended dose with a full glass of warm water, twice daily after meals, or as advised by your Ayurvedic practitioner." } },
+        "s2": { "type": "step", "settings": { "emoji": "💧", "title": "Stay Well Hydrated", "description": "Drink 8–10 glasses of water daily. Adequate hydration is essential for kidney wellness and helps the herbs work most effectively." } },
+        "s3": { "type": "step", "settings": { "emoji": "🌿", "title": "Consistent Daily Use", "description": "Ayurvedic kidney support works best with consistency. Most customers notice improved wellbeing within 4–6 weeks. Recommend full 12-week course." } }
+      },
+      "block_order": ["s1","s2","s3"],
+      "settings": { "tag": "How to Use", "heading": "Simple Daily Protocol", "subheading": "3 steps for effective Ayurvedic kidney and urinary wellness support", "cta_label": "", "bg_color": "#F9F4EE", "padding_top": 64, "padding_bottom": 64 }
+    },
+    "benefits": {
+      "type": "hindrishi-product-benefits",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "icon_emoji": "💧", "icon_bg": "#DBE9E0", "title": "Supports Kidney Function", "description": "Classical Ayurvedic herbs like Punarnava and Gokshura have been used for centuries to support healthy kidney and urinary system function.", "tag_label": "Kidney Wellness" } },
+        "b2": { "type": "benefit", "settings": { "icon_emoji": "⚖️", "icon_bg": "#FFDFB8", "title": "Promotes Natural Fluid Balance", "description": "Helps support the body's natural fluid regulation mechanisms. Traditionally used for managing water retention and promoting healthy urinary flow.", "tag_label": "Fluid Balance" } },
+        "b3": { "type": "benefit", "settings": { "icon_emoji": "🛡️", "icon_bg": "#DBE9E0", "title": "Urinary Tract Wellness", "description": "Herbs like Pashanbhed and Varuna are traditionally used in Ayurveda to support a healthy urinary tract and normal urinary function.", "tag_label": "Urinary Support" } },
+        "b4": { "type": "benefit", "settings": { "icon_emoji": "⚡", "icon_bg": "#FFDFB8", "title": "Reduces Feelings of Fatigue", "description": "When kidney function is supported naturally, overall energy and vitality tend to improve. Users often report feeling less tired and more energetic.", "tag_label": "Energy & Vitality" } }
+      },
+      "block_order": ["b1","b2","b3","b4"],
+      "settings": { "tag": "Key Benefits", "heading": "Complete Kidney Wellness Support", "subheading": "An Ayurvedic formula for your urinary system's natural health", "bg_color": "#ffffff", "padding_top": 64, "padding_bottom": 64 }
+    },
+    "ingredients": {
+      "type": "hindrishi-product-ingredients",
+      "blocks": {
+        "i1": { "type": "ingredient", "settings": { "emoji": "🫚", "name": "Punarnava",    "sanskrit": "Boerhavia diffusa",     "benefit": "Meaning 'that which renews'. Supports healthy kidney function and natural diuretic activity. Premier kidney herb in Ayurveda.", "purity": "100% Pure Extract" } },
+        "i2": { "type": "ingredient", "settings": { "emoji": "🌱", "name": "Gokshura",     "sanskrit": "Tribulus terrestris",   "benefit": "Widely used in Ayurvedic kidney and urinary formulations. Supports healthy urinary flow and kidney tissue wellness.", "purity": "Standardized Extract" } },
+        "i3": { "type": "ingredient", "settings": { "emoji": "🪨", "name": "Pashanbhed",   "sanskrit": "Saxifraga ligulata",    "benefit": "Literally 'stone breaker'. Traditionally used in Ayurveda for supporting healthy kidneys and urinary tract.", "purity": "Pure Extract" } },
+        "i4": { "type": "ingredient", "settings": { "emoji": "🌳", "name": "Varuna",       "sanskrit": "Crataeva nurvala",      "benefit": "Classical Ayurvedic herb traditionally used for urinary system support and healthy kidney function.", "purity": "Herbal Extract" } }
+      },
+      "block_order": ["i1","i2","i3","i4"],
+      "settings": { "tag": "Key Ingredients", "heading": "Herbs from Ayurvedic Kidney Texts", "subheading": "Sourced from trusted growers, tested for purity and potency", "bg_color": "#ffffff", "padding_top": 60, "padding_bottom": 60 }
+    },
+    "product_faq": {
+      "type": "hindrishi-product-faq",
+      "blocks": {
+        "q1": { "type": "faq", "settings": { "question": "What is the recommended dose?", "answer": "<p>Take as directed on the product label — typically 1–2 tablets or the prescribed syrup dose twice daily with warm water after meals. For specific dosage guidance, consult your Ayurvedic physician.</p>" } },
+        "q2": { "type": "faq", "settings": { "question": "How long should I take this product?", "answer": "<p>For comprehensive kidney wellness support, we recommend a 12-week course with consistent daily use. You can take a 4-week break before resuming. Results are cumulative with Ayurvedic formulations.</p>" } },
+        "q3": { "type": "faq", "settings": { "question": "Can I take this if I have kidney disease?", "answer": "<p>This product is designed for general kidney wellness support in healthy individuals, not for treatment of diagnosed kidney disease. If you have a diagnosed kidney condition, are on dialysis, or have reduced kidney function (GFR), please consult your nephrologist before use.</p>" } },
+        "q4": { "type": "faq", "settings": { "question": "Can I take this with blood pressure or diabetes medication?", "answer": "<p>Some herbs in this formula may interact with medications for blood pressure, diabetes, or diuretics. If you are on prescription medications, consult your doctor before starting this supplement.</p>" } },
+        "q5": { "type": "faq", "settings": { "question": "How much water should I drink while taking this?", "answer": "<p>We strongly recommend drinking 8–10 glasses (2–2.5 litres) of water daily while taking this product. Adequate hydration supports kidney function and helps the herbs work effectively.</p>" } }
+      },
+      "block_order": ["q1","q2","q3","q4","q5"],
+      "settings": { "tag": "FAQ", "heading": "Frequently Asked Questions", "bg_color": "#F9F4EE", "padding_top": 60, "padding_bottom": 60 }
+    },
+    "testimonials": {
+      "type": "hindrishi-testimonials",
+      "blocks": {
+        "r1": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "Natural support that actually works", "review": "Been using for 2 months consistently and my overall wellness has improved. No more that heavy, tired feeling. I appreciate that it's all natural herbs. Highly recommend.", "author_name": "Dr. Amit Verma", "author_location": "Bangalore", "product": "Kidney Wellness Support" } },
+        "r2": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "Noticed difference in 4 weeks", "review": "I was feeling very bloated and uncomfortable. Started taking this and within a month I felt so much lighter. Very happy with this purchase. Natural and effective.", "author_name": "Ramesh Iyer", "author_location": "Chennai", "product": "Kidney Wellness Support" } },
+        "r3": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "Ayurvedic herbs that I trust", "review": "I prefer Ayurvedic over synthetic supplements always. This formula feels premium — the quality is evident. My energy levels and overall comfort have improved significantly.", "author_name": "Geeta Singh", "author_location": "Lucknow", "product": "Kidney Wellness Support" } }
+      },
+      "block_order": ["r1","r2","r3"],
+      "settings": { "tag": "Customer Reviews", "heading": "Trusted for Kidney Wellness", "subheading": "Verified reviews from customers across India", "bg_color": "#F9F4EE", "padding_top": 64, "padding_bottom": 64 }
+    },
+    "sticky_atc": { "type": "hindrishi-sticky-atc", "settings": { "btn_label": "Add to Cart", "show_prepaid_nudge": true, "prepaid_discount": "5" } },
+    "related-products": { "type": "related-products", "settings": { "heading": "Complete Your Wellness Routine", "heading_size": "h2", "products_to_show": 4, "columns_desktop": 4, "columns_mobile": "2", "color_scheme": "scheme-1", "image_ratio": "adapt", "show_secondary_image": true, "show_vendor": false, "show_rating": true, "padding_top": 36, "padding_bottom": 60 } }
+  },
+  "order": ["main","certifications","how_it_works","benefits","ingredients","product_faq","testimonials","sticky_atc","related-products"]
+}
