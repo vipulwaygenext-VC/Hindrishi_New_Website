@@ -1,1 +1,203 @@
-{"sections":{"main":{"type":"main-product","blocks":{"vendor":{"type":"text","settings":{"text":"{{ product.vendor }}","text_style":"body"}},"title":{"type":"title","settings":{}},"price":{"type":"price","settings":{}},"variant_picker":{"type":"variant_picker","settings":{"picker_type":"button","swatch_shape":"circle"}},"quantity_selector":{"type":"quantity_selector","settings":{}},"buy_buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":true,"show_gift_card_recipient":true}},"description":{"type":"description","settings":{}},"share":{"type":"share","settings":{"share_label":"Share"}}},"block_order":["vendor","title","price","variant_picker","quantity_selector","buy_buttons","description","share"],"settings":{"enable_sticky_info":true,"color_scheme":"scheme-1","media_size":"small","constrain_to_viewport":true,"media_fit":"contain","gallery_layout":"thumbnail","mobile_thumbnails":"hide","media_position":"left","image_zoom":"lightbox","hide_variants":false,"enable_video_looping":false,"padding_top":20,"padding_bottom":12}},"related-products":{"type":"related-products","settings":{"heading":"You may also like","heading_size":"h2","products_to_show":4,"columns_desktop":4,"columns_mobile":"2","color_scheme":"scheme-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"padding_top":36,"padding_bottom":36}}},"order":["main","related-products"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": { "type": "title", "settings": {} },
+        "rating": { "type": "rating", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "urgency": {
+          "type": "hindrishi_urgency",
+          "settings": {
+            "text": "🔥 47 people bought this in the last 24 hours · Only 12 units left"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": { "picker_type": "button", "swatch_shape": "circle" }
+        },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "prepaid": {
+          "type": "hindrishi_prepaid",
+          "settings": {
+            "title": "Pay Online & Save More",
+            "discount_label": "Save ₹50",
+            "description": "Use UPI, Card, or Net Banking at checkout. COD also available pan India."
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": { "show_dynamic_checkout": true, "show_gift_card_recipient": false }
+        },
+        "trust_badges": {
+          "type": "hindrishi_trust",
+          "settings": {
+            "icon1": "🌿", "badge1": "100% Ayurvedic",
+            "icon2": "🏭", "badge2": "GMP Certified",
+            "icon3": "🚚", "badge3": "Free Shipping ₹499+",
+            "icon4": "🔒", "badge4": "Secure Checkout"
+          }
+        },
+        "description": { "type": "description", "settings": {} },
+        "share": { "type": "share", "settings": { "share_label": "Share" } }
+      },
+      "block_order": [
+        "title", "rating", "price", "urgency",
+        "variant_picker", "quantity_selector",
+        "prepaid", "buy_buttons", "trust_badges",
+        "description", "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "certifications": {
+      "type": "hindrishi-certifications",
+      "blocks": {
+        "cert1": { "type": "cert", "settings": { "icon": "🌿", "icon_bg": "#DBE9E0", "label": "100% Ayurvedic Formula" } },
+        "cert2": { "type": "cert", "settings": { "icon": "🏭", "icon_bg": "#FFDFB8", "label": "GMP Certified Manufacturing" } },
+        "cert3": { "type": "cert", "settings": { "icon": "🧪", "icon_bg": "#DBE9E0", "label": "Lab Tested for Purity" } },
+        "cert4": { "type": "cert", "settings": { "icon": "📋", "icon_bg": "#FFDFB8", "label": "FSSAI Licensed" } },
+        "cert5": { "type": "cert", "settings": { "icon": "🇮🇳", "icon_bg": "#DBE9E0", "label": "Made in India" } }
+      },
+      "block_order": ["cert1","cert2","cert3","cert4","cert5"],
+      "settings": { "bg_color": "#ffffff", "padding_top": 20 }
+    },
+    "how_it_works": {
+      "type": "hindrishi-how-it-works",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Choose Your Formula", "description": "Select your Ayurvedic product. Each formula targets specific wellness needs and is clearly explained." } },
+        "s2": { "type": "step", "settings": { "title": "Take Daily as Directed", "description": "Follow the recommended dosage — most products work best when taken consistently at the same time each day." } },
+        "s3": { "type": "step", "settings": { "title": "Feel the Difference", "description": "Ayurveda works gradually and holistically. Most customers notice improvements within 3–4 weeks of consistent use." } }
+      },
+      "block_order": ["s1","s2","s3"],
+      "settings": {
+        "tag": "How It Works",
+        "heading": "Simple. Natural. Effective.",
+        "subheading": "Just 3 steps to begin your Ayurvedic wellness journey",
+        "bg_color": "#F9F4EE",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "benefits": {
+      "type": "hindrishi-product-benefits",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "icon_emoji": "🌿", "icon_bg": "#DBE9E0", "title": "Supports Natural Detox", "description": "Classical herbs known in Ayurveda for supporting the body's natural cleansing and detoxification processes.", "tag_label": "Ayurvedic Blend" } },
+        "b2": { "type": "benefit", "settings": { "icon_emoji": "⚡", "icon_bg": "#FFDFB8", "title": "Promotes Energy & Vitality", "description": "Herbal adaptogens help support healthy energy levels and reduce feelings of fatigue naturally.", "tag_label": "Herbal Formula" } },
+        "b3": { "type": "benefit", "settings": { "icon_emoji": "🛡️", "icon_bg": "#DBE9E0", "title": "Strengthens Natural Immunity", "description": "Ingredients traditionally used in Ayurveda to support robust immune function and overall wellness.", "tag_label": "Immunity Support" } }
+      },
+      "block_order": ["b1","b2","b3"],
+      "settings": {
+        "tag": "Key Benefits",
+        "heading": "What This Product Supports",
+        "subheading": "Rooted in Ayurveda. Validated by modern quality standards.",
+        "bg_color": "#ffffff",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "ingredients": {
+      "type": "hindrishi-product-ingredients",
+      "blocks": {
+        "i1": { "type": "ingredient", "settings": { "emoji": "🌿", "name": "Bhumi Amla", "sanskrit": "Phyllanthus niruri", "benefit": "Supports healthy liver function and natural detoxification processes", "purity": "100% Pure Extract" } },
+        "i2": { "type": "ingredient", "settings": { "emoji": "🫚", "name": "Punarnava", "sanskrit": "Boerhavia diffusa", "benefit": "Promotes kidney health and supports natural fluid balance", "purity": "Standardized Extract" } },
+        "i3": { "type": "ingredient", "settings": { "emoji": "🍃", "name": "Kutki", "sanskrit": "Picrorhiza kurroa", "benefit": "Valued in Ayurveda for liver and digestive support", "purity": "100% Pure" } },
+        "i4": { "type": "ingredient", "settings": { "emoji": "🌱", "name": "Kalmegh", "sanskrit": "Andrographis paniculata", "benefit": "Supports immunity and natural liver wellness", "purity": "Tested Extract" } }
+      },
+      "block_order": ["i1","i2","i3","i4"],
+      "settings": {
+        "tag": "Key Ingredients",
+        "heading": "The Power of Nature",
+        "subheading": "Each ingredient selected from classical Ayurvedic texts, tested for purity",
+        "bg_color": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "product_faq": {
+      "type": "hindrishi-product-faq",
+      "blocks": {
+        "q1": { "type": "faq", "settings": { "question": "How should I take this product?", "answer": "<p>Take as directed on the product label. For best results, maintain consistent daily use with warm water. Consult your physician if you have existing health conditions.</p>" } },
+        "q2": { "type": "faq", "settings": { "question": "How long before I see results?", "answer": "<p>Ayurvedic formulations work gradually and naturally. Most customers notice improvements within 3–4 weeks of consistent daily use. For comprehensive results, we recommend using for 8–12 weeks alongside a balanced diet and healthy lifestyle.</p>" } },
+        "q3": { "type": "faq", "settings": { "question": "Are there any side effects?", "answer": "<p>All Hindrishi products are made with 100% natural Ayurvedic ingredients and are generally well-tolerated. If you experience any discomfort, discontinue use and consult your physician. Not recommended during pregnancy without medical advice.</p>" } },
+        "q4": { "type": "faq", "settings": { "question": "Can I take this with other medications?", "answer": "<p>While our products are 100% natural, if you are currently on prescription medication or have an underlying health condition, we recommend consulting your doctor before starting any new supplement.</p>" } },
+        "q5": { "type": "faq", "settings": { "question": "Is this product vegetarian?", "answer": "<p>Yes, all Hindrishi products are 100% vegetarian. All ingredients are plant-based. No animal-derived ingredients are used in any of our formulations.</p>" } }
+      },
+      "block_order": ["q1","q2","q3","q4","q5"],
+      "settings": {
+        "tag": "FAQ",
+        "heading": "Frequently Asked Questions",
+        "bg_color": "#F9F4EE",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "testimonials": {
+      "type": "hindrishi-testimonials",
+      "blocks": {
+        "r1": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "Pehli baar kisi product ne itni jaldi relief diya", "review": "I was feeling very heavy after meals and had zero energy. Started taking this syrup and within 3 weeks, I'm feeling so much lighter. Digestion has improved a lot. Very happy with results.", "author_name": "Rajesh Kumar", "author_location": "Delhi", "product": "Liv-Revive Liver Syrup" } },
+        "r2": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "My doctor suggested Ayurvedic and I chose Hindrishi", "review": "Instead of going for heavy medicines, I wanted something natural. This syrup has been amazing. No side effects, and I definitely feel the difference in my overall energy and appetite.", "author_name": "Priya Sharma", "author_location": "Mumbai", "product": "Liv-Revive Liver Syrup" } },
+        "r3": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "Natural support that actually works", "review": "Been using for 2 months consistently and my overall wellness has improved. No more that heavy, tired feeling. I appreciate that it's all natural herbs. Highly recommend.", "author_name": "Dr. Amit Verma", "author_location": "Bangalore", "product": "Kidney Wellness Support" } }
+      },
+      "block_order": ["r1","r2","r3"],
+      "settings": {
+        "tag": "What Customers Say",
+        "heading": "Real Results, Real People",
+        "subheading": "Join 40,000+ families who trust Hindrishi Ayurveda for their daily wellness",
+        "bg_color": "#F9F4EE",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "sticky_atc": {
+      "type": "hindrishi-sticky-atc",
+      "settings": {
+        "btn_label": "Add to Cart",
+        "show_prepaid_nudge": true,
+        "prepaid_discount": "5"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You May Also Like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "padding_top": 36,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "certifications",
+    "how_it_works",
+    "benefits",
+    "ingredients",
+    "product_faq",
+    "testimonials",
+    "sticky_atc",
+    "related-products"
+  ]
+}

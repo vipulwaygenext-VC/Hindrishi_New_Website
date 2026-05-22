@@ -1,0 +1,519 @@
+/* Hindrishi Product Page Styles */
+
+/* ── Certifications Strip ─────────────────────────────────────────── */
+.hcert {
+  border-top: 1px solid var(--hindrishi-border);
+  border-bottom: 1px solid var(--hindrishi-border);
+}
+.hcert__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px 24px;
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.hcert__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--hindrishi-text-dark);
+  white-space: nowrap;
+}
+.hcert__icon {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.7rem;
+  flex-shrink: 0;
+}
+.hcert__divider {
+  width: 1px; height: 28px;
+  background: var(--hindrishi-border);
+  display: none;
+}
+@media screen and (min-width: 750px) {
+  .hcert__divider { display: block; }
+  .hcert__list { gap: 0; }
+  .hcert__item { padding: 0 24px; }
+  .hcert__item:first-child { padding-left: 0; }
+  .hcert__item:last-child  { padding-right: 0; }
+}
+
+/* ── Product Trust Badges ─────────────────────────────────────────── */
+.hptrust {
+  background: var(--hindrishi-cream);
+  border: 1px solid var(--hindrishi-border);
+  border-radius: var(--hindrishi-radius-md);
+  padding: 16px 20px;
+}
+.hptrust__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media screen and (min-width: 750px) {
+  .hptrust__grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+}
+.hptrust__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
+.hptrust__icon { font-size: 2rem; line-height: 1; }
+.hptrust__label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--hindrishi-text-dark);
+  line-height: 1.3;
+}
+
+/* ── Prepaid Nudge (inside product info) ──────────────────────────── */
+.hprepaid {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3E6 100%);
+  border: 1.5px solid #F5A623;
+  border-radius: var(--hindrishi-radius-sm);
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.hprepaid__icon { font-size: 2rem; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+.hprepaid__body { flex: 1; }
+.hprepaid__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #B25900;
+  margin: 0 0 4px;
+}
+.hprepaid__desc {
+  font-size: 1.25rem;
+  color: var(--hindrishi-text-medium);
+  margin: 0;
+  line-height: 1.5;
+}
+.hprepaid__badge {
+  display: inline-block;
+  background: #F5A623;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-left: 4px;
+}
+
+/* ── Benefits Section ─────────────────────────────────────────────── */
+.hbenefits__header { text-align: center; margin-bottom: 48px; }
+.hbenefits__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media screen and (min-width: 600px) {
+  .hbenefits__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media screen and (min-width: 990px) {
+  .hbenefits__grid { grid-template-columns: repeat(3, 1fr); }
+}
+.hbenefits__card {
+  background: #fff;
+  border: 1px solid var(--hindrishi-border);
+  border-radius: var(--hindrishi-radius-md);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--hindrishi-shadow-card);
+  transition: box-shadow .2s, transform .2s;
+}
+.hbenefits__card:hover {
+  box-shadow: var(--hindrishi-shadow-md);
+  transform: translateY(-2px);
+}
+.hbenefits__icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.6rem;
+  flex-shrink: 0;
+}
+.hbenefits__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--hindrishi-text-dark);
+  margin: 0;
+}
+.hbenefits__desc {
+  font-size: 1.4rem;
+  color: var(--hindrishi-text-medium);
+  line-height: 1.65;
+  margin: 0;
+}
+.hbenefits__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--hindrishi-green-pale);
+  color: var(--hindrishi-green);
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--hindrishi-radius-pill);
+  width: fit-content;
+}
+
+/* ── How It Works ─────────────────────────────────────────────────── */
+.hhow__header { text-align: center; margin-bottom: 56px; }
+.hhow__steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+@media screen and (min-width: 750px) {
+  .hhow__steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .hhow__steps::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: calc(16.66% + 18px);
+    right: calc(16.66% + 18px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--hindrishi-green-pale), var(--hindrishi-green), var(--hindrishi-green-pale));
+    z-index: 0;
+  }
+}
+.hhow__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+.hhow__step-num {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: var(--hindrishi-green);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.6rem;
+  font-weight: 800;
+  border: 4px solid var(--hindrishi-cream);
+  box-shadow: 0 0 0 3px var(--hindrishi-green);
+  flex-shrink: 0;
+}
+.hhow__step-emoji {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+.hhow__step-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--hindrishi-text-dark);
+  margin: 0;
+}
+.hhow__step-desc {
+  font-size: 1.4rem;
+  color: var(--hindrishi-text-medium);
+  line-height: 1.6;
+  margin: 0;
+}
+.hhow__cta { text-align: center; margin-top: 48px; }
+
+/* ── Ingredients Section ──────────────────────────────────────────── */
+.hingredients__header { text-align: center; margin-bottom: 48px; }
+.hingredients__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+@media screen and (min-width: 750px) {
+  .hingredients__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media screen and (min-width: 990px) {
+  .hingredients__grid { grid-template-columns: repeat(4, 1fr); }
+}
+.hingredients__card {
+  background: #fff;
+  border: 1px solid var(--hindrishi-border);
+  border-radius: var(--hindrishi-radius-md);
+  padding: 20px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--hindrishi-shadow-card);
+  transition: box-shadow .2s, transform .2s;
+}
+.hingredients__card:hover {
+  box-shadow: var(--hindrishi-shadow-md);
+  transform: translateY(-2px);
+}
+.hingredients__img-wrap {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--hindrishi-green-pale);
+  display: flex; align-items: center; justify-content: center;
+}
+.hingredients__img { width: 100%; height: 100%; object-fit: cover; }
+.hingredients__emoji { font-size: 3.2rem; line-height: 1; }
+.hingredients__name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--hindrishi-text-dark);
+  margin: 0;
+}
+.hingredients__sanskrit {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--hindrishi-green);
+  margin: 0;
+}
+.hingredients__benefit {
+  font-size: 1.3rem;
+  color: var(--hindrishi-text-medium);
+  line-height: 1.5;
+  margin: 0;
+}
+.hingredients__purity {
+  display: inline-block;
+  background: var(--hindrishi-green-pale);
+  color: var(--hindrishi-green);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--hindrishi-radius-pill);
+}
+
+/* ── Product FAQ ──────────────────────────────────────────────────── */
+.hpfaq__header { text-align: center; margin-bottom: 40px; }
+.hpfaq__wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid var(--hindrishi-border);
+  border-radius: var(--hindrishi-radius-md);
+  overflow: hidden;
+}
+.hpfaq__item {
+  border-bottom: 1px solid var(--hindrishi-border);
+  background: #fff;
+}
+.hpfaq__item:last-child { border-bottom: none; }
+.hpfaq__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--hindrishi-text-dark);
+  transition: background .15s;
+  user-select: none;
+}
+.hpfaq__q:hover { background: var(--hindrishi-cream); }
+.hpfaq__q::-webkit-details-marker { display: none; }
+.hpfaq__icon {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--hindrishi-green-pale);
+  color: var(--hindrishi-green);
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+}
+.hpfaq__icon--minus { display: none; }
+.hpfaq__item[open] .hpfaq__icon { background: var(--hindrishi-green); color: #fff; }
+.hpfaq__item[open] .hpfaq__icon--plus  { display: none; }
+.hpfaq__item[open] .hpfaq__icon--minus { display: block; }
+.hpfaq__item[open] .hpfaq__q { background: var(--hindrishi-cream); color: var(--hindrishi-green); }
+.hpfaq__a { padding: 0 22px 18px; background: var(--hindrishi-cream); }
+.hpfaq__a-inner {
+  font-size: 1.4rem;
+  color: var(--hindrishi-text-medium);
+  line-height: 1.7;
+  border-top: 1px solid var(--hindrishi-border-light);
+  padding-top: 14px;
+}
+
+/* ── Brand Story ──────────────────────────────────────────────────── */
+.hstory__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+@media screen and (min-width: 990px) {
+  .hstory__layout { grid-template-columns: 1fr 1fr; gap: 80px; }
+}
+.hstory__img-wrap {
+  border-radius: var(--hindrishi-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--hindrishi-shadow-md);
+  aspect-ratio: 4/3;
+  background: var(--hindrishi-green-pale);
+  display: flex; align-items: center; justify-content: center;
+}
+.hstory__img { width: 100%; height: 100%; object-fit: cover; }
+.hstory__img-placeholder { font-size: 8rem; opacity: .4; }
+.hstory__tag { margin-bottom: 8px; }
+.hstory__heading { margin: 0 0 16px; }
+.hstory__desc {
+  font-size: 1.5rem;
+  color: var(--hindrishi-text-medium);
+  line-height: 1.8;
+  margin: 0 0 28px;
+}
+.hstory__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.hstory__stat {
+  text-align: center;
+  background: var(--hindrishi-cream);
+  border-radius: var(--hindrishi-radius-sm);
+  padding: 16px 8px;
+  border: 1px solid var(--hindrishi-border);
+}
+.hstory__stat-num {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--hindrishi-green);
+  display: block;
+  line-height: 1.1;
+}
+.hstory__stat-label {
+  font-size: 1.2rem;
+  color: var(--hindrishi-text-medium);
+  display: block;
+  margin-top: 4px;
+}
+
+/* ── Sticky ATC Bar ───────────────────────────────────────────────── */
+.hsticky-atc {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 200;
+  background: #fff;
+  border-top: 2px solid var(--hindrishi-green);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
+  transform: translateY(100%);
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+}
+.hsticky-atc.is-visible {
+  transform: translateY(0);
+}
+.hsticky-atc__inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hsticky-atc__img {
+  width: 52px; height: 52px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: none;
+}
+@media screen and (min-width: 750px) { .hsticky-atc__img { display: block; } }
+.hsticky-atc__info { flex: 1; min-width: 0; }
+.hsticky-atc__name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--hindrishi-text-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 0 2px;
+}
+.hsticky-atc__price {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--hindrishi-green);
+  margin: 0;
+}
+.hsticky-atc__price-compare {
+  font-size: 1.3rem;
+  color: var(--hindrishi-text-light);
+  text-decoration: line-through;
+  margin-left: 6px;
+}
+.hsticky-atc__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.hsticky-atc__btn {
+  background: var(--hindrishi-green);
+  color: #fff;
+  border: none;
+  border-radius: var(--hindrishi-radius-sm);
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .2s, transform .1s;
+  font-family: inherit;
+}
+.hsticky-atc__btn:hover {
+  background: var(--hindrishi-green-hover);
+  transform: translateY(-1px);
+}
+.hsticky-atc__btn:active { transform: translateY(0); }
+.hsticky-atc__prepaid {
+  display: none;
+  font-size: 1.2rem;
+  color: #B25900;
+  font-weight: 600;
+  white-space: nowrap;
+}
+@media screen and (min-width: 750px) { .hsticky-atc__prepaid { display: block; } }
+
+/* ── Urgency / Social Proof Inline ───────────────────────────────── */
+.hurgency {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFF8E7;
+  border: 1px solid #F5C842;
+  border-radius: var(--hindrishi-radius-sm);
+  padding: 10px 14px;
+  font-size: 1.3rem;
+  color: #7A5200;
+  font-weight: 600;
+}
+.hurgency__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #F5A623;
+  flex-shrink: 0;
+  animation: hurgency-pulse 1.5s infinite;
+}
+@keyframes hurgency-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .6; transform: scale(.85); }
+}

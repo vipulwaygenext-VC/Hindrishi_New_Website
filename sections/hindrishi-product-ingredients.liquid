@@ -1,0 +1,96 @@
+{{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+{{ 'hindrishi-product.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .hingredients-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .hingredients-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="hingredients hingredients-{{ section.id }}" style="background:{{ section.settings.bg_color }};">
+  <div class="page-width">
+
+    <div class="hingredients__header {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}">
+      <span class="hindrishi-section-tag">{{ section.settings.tag }}</span>
+      <h2 class="hindrishi-section-heading">{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="hindrishi-section-subheading" style="margin:0 auto;">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+      <div class="hindrishi-divider"></div>
+    </div>
+
+    <div class="hingredients__grid">
+      {%- for block in section.blocks -%}
+        <div class="hingredients__card {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}"
+             {{ block.shopify_attributes }}>
+
+          <div class="hingredients__img-wrap">
+            {%- if block.settings.image != blank -%}
+              {{
+                block.settings.image
+                | image_url: width: 160
+                | image_tag: loading: 'lazy', class: 'hingredients__img', alt: block.settings.name
+              }}
+            {%- else -%}
+              <span class="hingredients__emoji">{{ block.settings.emoji }}</span>
+            {%- endif -%}
+          </div>
+
+          <h3 class="hingredients__name">{{ block.settings.name }}</h3>
+          {%- if block.settings.sanskrit != blank -%}
+            <p class="hingredients__sanskrit">{{ block.settings.sanskrit }}</p>
+          {%- endif -%}
+          <p class="hingredients__benefit">{{ block.settings.benefit }}</p>
+          {%- if block.settings.purity != blank -%}
+            <span class="hingredients__purity">{{ block.settings.purity }}</span>
+          {%- endif -%}
+
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Ingredients",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text",  "id": "tag",        "label": "Section Tag",  "default": "Key Ingredients" },
+    { "type": "text",  "id": "heading",    "label": "Heading",      "default": "The Power of Nature" },
+    { "type": "text",  "id": "subheading", "label": "Subheading",   "default": "Each ingredient selected from classical Ayurvedic texts, tested for purity" },
+    { "type": "color", "id": "bg_color",   "label": "Background",   "default": "#ffffff" },
+    { "type": "range", "id": "padding_top",    "label": "Padding Top",    "min": 40, "max": 120, "step": 8, "default": 60 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding Bottom", "min": 40, "max": 120, "step": 8, "default": 60 }
+  ],
+  "blocks": [{
+    "type": "ingredient", "name": "Ingredient",
+    "settings": [
+      { "type": "image_picker", "id": "image",    "label": "Ingredient Image (optional)" },
+      { "type": "text",         "id": "emoji",    "label": "Emoji (fallback)",            "default": "🌿" },
+      { "type": "text",         "id": "name",     "label": "Ingredient Name",             "default": "Bhumi Amla" },
+      { "type": "text",         "id": "sanskrit", "label": "Sanskrit / Scientific Name",  "default": "Phyllanthus niruri" },
+      { "type": "textarea",     "id": "benefit",  "label": "Benefit Description",         "default": "Supports healthy liver function and natural detoxification" },
+      { "type": "text",         "id": "purity",   "label": "Purity Tag (e.g. 100% Pure)", "default": "100% Pure Extract" }
+    ]
+  }],
+  "presets": [{
+    "name": "Product Ingredients",
+    "blocks": [
+      { "type": "ingredient", "settings": { "emoji": "🌿", "name": "Bhumi Amla",   "sanskrit": "Phyllanthus niruri", "benefit": "Supports healthy liver function and natural detoxification processes", "purity": "100% Pure Extract" } },
+      { "type": "ingredient", "settings": { "emoji": "🫚", "name": "Punarnava",    "sanskrit": "Boerhavia diffusa",  "benefit": "Promotes kidney health and reduces water retention naturally", "purity": "Standardized Extract" } },
+      { "type": "ingredient", "settings": { "emoji": "🍃", "name": "Kutki",        "sanskrit": "Picrorhiza kurroa",  "benefit": "One of Ayurveda's most valued herbs for liver and digestive support", "purity": "100% Pure" } },
+      { "type": "ingredient", "settings": { "emoji": "🌱", "name": "Kalmegh",      "sanskrit": "Andrographis paniculata", "benefit": "Powerful herb known for supporting immunity and liver wellness", "purity": "Tested Extract" } }
+    ]
+  }]
+}
+{% endschema %}

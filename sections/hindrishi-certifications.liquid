@@ -1,0 +1,64 @@
+{{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+{{ 'hindrishi-product.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .hcert-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .hcert-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_top }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="hcert hcert-{{ section.id }}" style="background:{{ section.settings.bg_color }};">
+  <div class="page-width">
+    <ul class="hcert__list" role="list">
+      {%- for block in section.blocks -%}
+        <li class="hcert__item {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}"
+            {{ block.shopify_attributes }}>
+          <div class="hcert__icon" style="background:{{ block.settings.icon_bg }};">
+            {{ block.settings.icon }}
+          </div>
+          <span>{{ block.settings.label }}</span>
+        </li>
+        {%- unless forloop.last -%}
+          <li class="hcert__divider" aria-hidden="true"></li>
+        {%- endunless -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Certifications Strip",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "color", "id": "bg_color",    "label": "Background", "default": "#ffffff" },
+    { "type": "range", "id": "padding_top", "label": "Padding",    "min": 12, "max": 60, "step": 4, "default": 24 }
+  ],
+  "blocks": [{
+    "type": "cert", "name": "Certification Badge",
+    "settings": [
+      { "type": "text",  "id": "icon",    "label": "Emoji / Icon",    "default": "✓" },
+      { "type": "color", "id": "icon_bg", "label": "Icon Background", "default": "#DBE9E0" },
+      { "type": "text",  "id": "label",   "label": "Label",           "default": "Certified" }
+    ]
+  }],
+  "presets": [{
+    "name": "Certifications Strip",
+    "blocks": [
+      { "type": "cert", "settings": { "icon": "🌿", "icon_bg": "#DBE9E0", "label": "100% Ayurvedic Formula" } },
+      { "type": "cert", "settings": { "icon": "🏭", "icon_bg": "#FFDFB8", "label": "GMP Certified Manufacturing" } },
+      { "type": "cert", "settings": { "icon": "🧪", "icon_bg": "#DBE9E0", "label": "Lab Tested for Purity" } },
+      { "type": "cert", "settings": { "icon": "📋", "icon_bg": "#FFDFB8", "label": "FSSAI Licensed" } },
+      { "type": "cert", "settings": { "icon": "🇮🇳", "icon_bg": "#DBE9E0", "label": "Made in India" } }
+    ]
+  }]
+}
+{% endschema %}

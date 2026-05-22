@@ -1,0 +1,110 @@
+{{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+{{ 'hindrishi-product.css' | asset_url | stylesheet_tag }}
+
+{%- if template == 'product' or template.name == 'product' -%}
+
+<div class="hsticky-atc" id="hindrishi-sticky-atc" aria-hidden="true">
+  <div class="hsticky-atc__inner">
+
+    {%- if product.featured_image -%}
+      {{
+        product.featured_image
+        | image_url: width: 104
+        | image_tag: loading: 'lazy', class: 'hsticky-atc__img', alt: product.title
+      }}
+    {%- endif -%}
+
+    <div class="hsticky-atc__info">
+      <p class="hsticky-atc__name">{{ product.title }}</p>
+      <p class="hsticky-atc__price">
+        <span id="hsticky-price">{{ product.selected_or_first_available_variant.price | money }}</span>
+        {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
+          <span class="hsticky-atc__price-compare">{{ product.selected_or_first_available_variant.compare_at_price | money }}</span>
+        {%- endif -%}
+      </p>
+    </div>
+
+    {%- if section.settings.show_prepaid_nudge -%}
+      <span class="hsticky-atc__prepaid">
+        💳 Pay online · save {{ section.settings.prepaid_discount }}%
+      </span>
+    {%- endif -%}
+
+    <div class="hsticky-atc__actions">
+      <button
+        class="hsticky-atc__btn"
+        id="hindrishi-sticky-atc-btn"
+        aria-label="Add {{ product.title }} to cart"
+        data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+      >
+        {{ section.settings.btn_label }}
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  var bar    = document.getElementById('hindrishi-sticky-atc');
+  var btn    = document.getElementById('hindrishi-sticky-atc-btn');
+  var mainBtn = document.querySelector('.product-form__submit, [data-type="add-to-cart"]');
+  var sentinel = document.querySelector('.product__info-container, .product-form');
+
+  if (!bar || !sentinel) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) {
+        bar.classList.add('is-visible');
+        bar.setAttribute('aria-hidden', 'false');
+      } else {
+        bar.classList.remove('is-visible');
+        bar.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }, { threshold: 0, rootMargin: '-80px 0px 0px 0px' });
+
+  observer.observe(sentinel);
+
+  /* Sync variant selection → sticky price */
+  document.addEventListener('variant:change', function(e) {
+    if (!e.detail || !e.detail.variant) return;
+    var v = e.detail.variant;
+    var priceEl = document.getElementById('hsticky-price');
+    if (priceEl && v.price) {
+      priceEl.textContent = (v.price / 100).toLocaleString('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 });
+    }
+    if (btn) btn.dataset.variantId = v.id;
+  });
+
+  /* Sticky ATC → scroll to main form (smoothly) */
+  if (btn) {
+    btn.addEventListener('click', function() {
+      var mainForm = document.querySelector('.product-form');
+      if (mainForm) {
+        mainForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        var atcBtn = mainForm.querySelector('[type="submit"]');
+        if (atcBtn) { setTimeout(function() { atcBtn.click(); }, 600); }
+      }
+    });
+  }
+})();
+</script>
+
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Sticky Add to Cart",
+  "tag": "section",
+  "class": "section",
+  "limit": 1,
+  "settings": [
+    { "type": "text",     "id": "btn_label",          "label": "Button Text",          "default": "Add to Cart" },
+    { "type": "checkbox", "id": "show_prepaid_nudge",  "label": "Show Prepaid Nudge",   "default": true },
+    { "type": "text",     "id": "prepaid_discount",    "label": "Prepaid Discount %",   "default": "5" }
+  ],
+  "presets": [{ "name": "Sticky Add to Cart" }]
+}
+{% endschema %}

@@ -39,6 +39,18 @@
       "block_order": ["usp1","usp2","usp3","usp4"],
       "settings": { "bg_color": "#ffffff", "padding_top": 40, "padding_bottom": 40 }
     },
+    "certifications": {
+      "type": "hindrishi-certifications",
+      "blocks": {
+        "cert1": { "type": "cert", "settings": { "icon": "🌿", "icon_bg": "#DBE9E0", "label": "100% Ayurvedic Formula" } },
+        "cert2": { "type": "cert", "settings": { "icon": "🏭", "icon_bg": "#FFDFB8", "label": "GMP Certified Manufacturing" } },
+        "cert3": { "type": "cert", "settings": { "icon": "🧪", "icon_bg": "#DBE9E0", "label": "Lab Tested for Purity" } },
+        "cert4": { "type": "cert", "settings": { "icon": "📋", "icon_bg": "#FFDFB8", "label": "FSSAI Licensed" } },
+        "cert5": { "type": "cert", "settings": { "icon": "🇮🇳", "icon_bg": "#DBE9E0", "label": "Made in India" } }
+      },
+      "block_order": ["cert1","cert2","cert3","cert4","cert5"],
+      "settings": { "bg_color": "#ffffff", "padding_top": 20 }
+    },
     "bestsellers": {
       "type": "featured-collection",
       "settings": {
@@ -65,6 +77,25 @@
         "swipe_on_mobile": true,
         "padding_top": 60,
         "padding_bottom": 60
+      }
+    },
+    "brand_story": {
+      "type": "hindrishi-brand-story",
+      "settings": {
+        "tag": "Our Story",
+        "heading": "Rooted in Tradition, Crafted for Today",
+        "description": "Hindrishi Ayurveda was born from a deep respect for India's 5,000-year healing tradition. We believe that nature has answers for every wellness challenge — when those answers are properly researched, tested, and formulated with care. Every product we create bridges the gap between ancient Ayurvedic wisdom and modern quality standards. GMP certified. Lab tested. Trusted by 40,000+ families.",
+        "stat1_number": "40K+",
+        "stat1_label": "Happy Families",
+        "stat2_number": "5,000",
+        "stat2_label": "Years of Wisdom",
+        "stat3_number": "GMP",
+        "stat3_label": "Certified Facilities",
+        "cta_label": "Shop All Products",
+        "image_position": "right",
+        "bg_color": "#F9F4EE",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "why_us": {
@@ -126,7 +157,9 @@
     "trust_strip",
     "hero",
     "usp_strip",
+    "certifications",
     "bestsellers",
+    "brand_story",
     "why_us",
     "testimonials",
     "faq",

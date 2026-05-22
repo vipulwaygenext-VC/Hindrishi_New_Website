@@ -1,0 +1,77 @@
+{{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+{{ 'hindrishi-product.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .hpfaq-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .hpfaq-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="hpfaq-section hpfaq-{{ section.id }}" style="background:{{ section.settings.bg_color }};">
+  <div class="page-width">
+
+    <div class="hpfaq__header {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}">
+      <span class="hindrishi-section-tag">{{ section.settings.tag }}</span>
+      <h2 class="hindrishi-section-heading">{{ section.settings.heading }}</h2>
+      <div class="hindrishi-divider"></div>
+    </div>
+
+    <div class="hpfaq__wrap">
+      {%- for block in section.blocks -%}
+        <details class="hpfaq__item {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}"
+                 {{ block.shopify_attributes }}>
+          <summary class="hpfaq__q">
+            <span>{{ block.settings.question }}</span>
+            <span class="hpfaq__icon" aria-hidden="true">
+              <svg class="hpfaq__icon--plus"  width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <svg class="hpfaq__icon--minus" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+          </summary>
+          <div class="hpfaq__a">
+            <div class="hpfaq__a-inner">{{ block.settings.answer }}</div>
+          </div>
+        </details>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product FAQ",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text",  "id": "tag",     "label": "Section Tag", "default": "FAQ" },
+    { "type": "text",  "id": "heading", "label": "Heading",     "default": "Frequently Asked Questions" },
+    { "type": "color", "id": "bg_color","label": "Background",  "default": "#F9F4EE" },
+    { "type": "range", "id": "padding_top",    "label": "Padding Top",    "min": 40, "max": 120, "step": 8, "default": 60 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding Bottom", "min": 40, "max": 120, "step": 8, "default": 60 }
+  ],
+  "blocks": [{
+    "type": "faq", "name": "FAQ Item",
+    "settings": [
+      { "type": "text",     "id": "question", "label": "Question", "default": "Question goes here?" },
+      { "type": "richtext", "id": "answer",   "label": "Answer",   "default": "<p>Answer goes here.</p>" }
+    ]
+  }],
+  "presets": [{
+    "name": "Product FAQ",
+    "blocks": [
+      { "type": "faq", "settings": { "question": "How should I take this product?", "answer": "<p>Take as directed on the product label. For best results, maintain consistent daily use with warm water. Consult your physician if you have existing health conditions.</p>" } },
+      { "type": "faq", "settings": { "question": "How long before I see results?", "answer": "<p>Ayurvedic formulations work gradually and naturally. Most customers notice improvements within 3–4 weeks of consistent daily use. For comprehensive results, we recommend using for 8–12 weeks alongside a balanced diet and healthy lifestyle.</p>" } },
+      { "type": "faq", "settings": { "question": "Are there any side effects?", "answer": "<p>All Hindrishi products are made with 100% natural Ayurvedic ingredients. They are generally well-tolerated. However, if you experience any discomfort, discontinue use and consult your physician. Not recommended during pregnancy without medical advice.</p>" } },
+      { "type": "faq", "settings": { "question": "Can I take this with other medications?", "answer": "<p>While our products are 100% natural, if you are currently on prescription medication or have an underlying health condition, we recommend consulting your doctor before starting any new supplement.</p>" } },
+      { "type": "faq", "settings": { "question": "Is this product vegetarian/vegan?", "answer": "<p>Yes, all Hindrishi products are 100% vegetarian. All ingredients are plant-based. No animal-derived ingredients are used in any of our formulations.</p>" } }
+    ]
+  }]
+}
+{% endschema %}

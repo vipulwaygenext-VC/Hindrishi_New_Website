@@ -485,6 +485,61 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
+
+              {%- when 'hindrishi_prepaid' -%}
+                {{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+                {{ 'hindrishi-product.css' | asset_url | stylesheet_tag }}
+                <div class="hprepaid" {{ block.shopify_attributes }}>
+                  <span class="hprepaid__icon">💳</span>
+                  <div class="hprepaid__body">
+                    <p class="hprepaid__title">
+                      {{ block.settings.title }}
+                      <span class="hprepaid__badge">{{ block.settings.discount_label }}</span>
+                    </p>
+                    <p class="hprepaid__desc">{{ block.settings.description }}</p>
+                  </div>
+                </div>
+
+              {%- when 'hindrishi_trust' -%}
+                {{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+                {{ 'hindrishi-product.css' | asset_url | stylesheet_tag }}
+                <div class="hptrust" {{ block.shopify_attributes }}>
+                  <div class="hptrust__grid">
+                    {%- if block.settings.badge1 != blank -%}
+                      <div class="hptrust__item">
+                        <span class="hptrust__icon">{{ block.settings.icon1 }}</span>
+                        <span class="hptrust__label">{{ block.settings.badge1 }}</span>
+                      </div>
+                    {%- endif -%}
+                    {%- if block.settings.badge2 != blank -%}
+                      <div class="hptrust__item">
+                        <span class="hptrust__icon">{{ block.settings.icon2 }}</span>
+                        <span class="hptrust__label">{{ block.settings.badge2 }}</span>
+                      </div>
+                    {%- endif -%}
+                    {%- if block.settings.badge3 != blank -%}
+                      <div class="hptrust__item">
+                        <span class="hptrust__icon">{{ block.settings.icon3 }}</span>
+                        <span class="hptrust__label">{{ block.settings.badge3 }}</span>
+                      </div>
+                    {%- endif -%}
+                    {%- if block.settings.badge4 != blank -%}
+                      <div class="hptrust__item">
+                        <span class="hptrust__icon">{{ block.settings.icon4 }}</span>
+                        <span class="hptrust__label">{{ block.settings.badge4 }}</span>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+
+              {%- when 'hindrishi_urgency' -%}
+                {{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+                {{ 'hindrishi-product.css' | asset_url | stylesheet_tag }}
+                <div class="hurgency" {{ block.shopify_attributes }}>
+                  <span class="hurgency__dot"></span>
+                  {{ block.settings.text }}
+                </div>
+
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
@@ -926,6 +981,39 @@
           "label": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.label",
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
         }
+      ]
+    },
+    {
+      "type": "hindrishi_prepaid",
+      "name": "Prepaid Nudge",
+      "limit": 1,
+      "settings": [
+        { "type": "text",    "id": "title",          "label": "Title",           "default": "Pay Online & Save More" },
+        { "type": "text",    "id": "discount_label", "label": "Discount Badge",  "default": "Save ₹50" },
+        { "type": "text",    "id": "description",    "label": "Description",     "default": "Use UPI, Card, or Net Banking. COD also available." }
+      ]
+    },
+    {
+      "type": "hindrishi_trust",
+      "name": "Trust Badges",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "icon1",  "label": "Badge 1 Icon",  "default": "🌿" },
+        { "type": "text", "id": "badge1", "label": "Badge 1 Label", "default": "100% Ayurvedic" },
+        { "type": "text", "id": "icon2",  "label": "Badge 2 Icon",  "default": "🏭" },
+        { "type": "text", "id": "badge2", "label": "Badge 2 Label", "default": "GMP Certified" },
+        { "type": "text", "id": "icon3",  "label": "Badge 3 Icon",  "default": "🚚" },
+        { "type": "text", "id": "badge3", "label": "Badge 3 Label", "default": "Free Shipping ₹499+" },
+        { "type": "text", "id": "icon4",  "label": "Badge 4 Icon",  "default": "🔒" },
+        { "type": "text", "id": "badge4", "label": "Badge 4 Label", "default": "Secure Checkout" }
+      ]
+    },
+    {
+      "type": "hindrishi_urgency",
+      "name": "Urgency / Social Proof",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "text", "label": "Urgency Text", "default": "🔥 47 people bought this in the last 24 hours" }
       ]
     },
     {

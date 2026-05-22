@@ -1,0 +1,89 @@
+{{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+{{ 'hindrishi-product.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .hhow-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .hhow-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="hhow hhow-{{ section.id }}" style="background:{{ section.settings.bg_color }};">
+  <div class="page-width">
+
+    <div class="hhow__header {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}">
+      <span class="hindrishi-section-tag">{{ section.settings.tag }}</span>
+      <h2 class="hindrishi-section-heading">{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="hindrishi-section-subheading" style="margin:0 auto;">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+      <div class="hindrishi-divider"></div>
+    </div>
+
+    <div class="hhow__steps">
+      {%- for block in section.blocks -%}
+        <div class="hhow__step {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}"
+             {{ block.shopify_attributes }}>
+          <div class="hhow__step-num">
+            {%- if block.settings.emoji != blank -%}
+              <span class="hhow__step-emoji">{{ block.settings.emoji }}</span>
+            {%- else -%}
+              {{ forloop.index }}
+            {%- endif -%}
+          </div>
+          <h3 class="hhow__step-title">{{ block.settings.title }}</h3>
+          <p class="hhow__step-desc">{{ block.settings.description }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.cta_label != blank -%}
+      <div class="hhow__cta {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--fade-in{% endif %}">
+        <a href="{{ section.settings.cta_link }}" class="hindrishi-btn-primary">
+          {{ section.settings.cta_label }}
+        </a>
+      </div>
+    {%- endif -%}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "How It Works",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text",  "id": "tag",        "label": "Section Tag",  "default": "How It Works" },
+    { "type": "text",  "id": "heading",    "label": "Heading",      "default": "Simple. Natural. Effective." },
+    { "type": "text",  "id": "subheading", "label": "Subheading",   "default": "Just 3 steps to begin your Ayurvedic wellness journey" },
+    { "type": "text",  "id": "cta_label",  "label": "CTA Label" },
+    { "type": "url",   "id": "cta_link",   "label": "CTA Link" },
+    { "type": "color", "id": "bg_color",   "label": "Background",   "default": "#F9F4EE" },
+    { "type": "range", "id": "padding_top",    "label": "Padding Top",    "min": 40, "max": 120, "step": 8, "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding Bottom", "min": 40, "max": 120, "step": 8, "default": 80 }
+  ],
+  "blocks": [{
+    "type": "step", "name": "Step",
+    "settings": [
+      { "type": "text",     "id": "emoji",       "label": "Emoji (replaces number)",  "default": "" },
+      { "type": "text",     "id": "title",       "label": "Step Title",               "default": "Step" },
+      { "type": "textarea", "id": "description", "label": "Step Description" }
+    ]
+  }],
+  "presets": [{
+    "name": "How It Works",
+    "blocks": [
+      { "type": "step", "settings": { "title": "Choose Your Formula", "description": "Browse our range of Ayurvedic formulations. Each product targets specific wellness needs, crafted from classical herbal combinations." } },
+      { "type": "step", "settings": { "title": "Follow Daily Routine", "description": "Take as directed — most formulas work best when taken consistently at the same time each day, ideally with warm water or as recommended." } },
+      { "type": "step", "settings": { "title": "Feel the Difference", "description": "Ayurveda works gradually and holistically. Most customers report noticeable improvements in 3–4 weeks of consistent daily use." } }
+    ]
+  }]
+}
+{% endschema %}

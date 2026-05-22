@@ -1,0 +1,80 @@
+{{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+{{ 'hindrishi-product.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .hbenefits-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .hbenefits-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="hbenefits hbenefits-{{ section.id }}" style="background:{{ section.settings.bg_color }};">
+  <div class="page-width">
+
+    <div class="hbenefits__header {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}">
+      <span class="hindrishi-section-tag">{{ section.settings.tag }}</span>
+      <h2 class="hindrishi-section-heading">{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="hindrishi-section-subheading" style="margin:0 auto;">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+      <div class="hindrishi-divider"></div>
+    </div>
+
+    <div class="hbenefits__grid">
+      {%- for block in section.blocks -%}
+        <div class="hbenefits__card {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}"
+             {{ block.shopify_attributes }}>
+          <div class="hbenefits__icon" style="background:{{ block.settings.icon_bg }};">
+            {{ block.settings.icon_emoji }}
+          </div>
+          <h3 class="hbenefits__title">{{ block.settings.title }}</h3>
+          <p class="hbenefits__desc">{{ block.settings.description }}</p>
+          {%- if block.settings.tag_label != blank -%}
+            <span class="hbenefits__tag">✓ {{ block.settings.tag_label }}</span>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Benefits",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text",  "id": "tag",        "label": "Section Tag",  "default": "Key Benefits" },
+    { "type": "text",  "id": "heading",    "label": "Heading",      "default": "What This Product Supports" },
+    { "type": "text",  "id": "subheading", "label": "Subheading",   "default": "Rooted in Ayurveda. Validated by modern quality standards." },
+    { "type": "color", "id": "bg_color",   "label": "Background",   "default": "#ffffff" },
+    { "type": "range", "id": "padding_top",    "label": "Padding Top",    "min": 40, "max": 120, "step": 8, "default": 60 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding Bottom", "min": 40, "max": 120, "step": 8, "default": 60 }
+  ],
+  "blocks": [{
+    "type": "benefit", "name": "Benefit Card",
+    "settings": [
+      { "type": "text",  "id": "icon_emoji", "label": "Icon Emoji",    "default": "🌿" },
+      { "type": "color", "id": "icon_bg",    "label": "Icon BG Color", "default": "#DBE9E0" },
+      { "type": "text",  "id": "title",      "label": "Benefit Title", "default": "Natural Support" },
+      { "type": "textarea", "id": "description", "label": "Description" },
+      { "type": "text",  "id": "tag_label",  "label": "Tag Label (e.g. Ayurvedic Blend)" }
+    ]
+  }],
+  "presets": [{
+    "name": "Product Benefits",
+    "blocks": [
+      { "type": "benefit", "settings": { "icon_emoji": "🌿", "icon_bg": "#DBE9E0", "title": "Supports Natural Detox",      "description": "Classical herbs known in Ayurveda for supporting the body's natural cleansing and detoxification processes.", "tag_label": "Ayurvedic Blend" } },
+      { "type": "benefit", "settings": { "icon_emoji": "⚡", "icon_bg": "#FFDFB8", "title": "Promotes Energy & Vitality",  "description": "Herbal adaptogens help support healthy energy levels and reduce feelings of fatigue naturally.", "tag_label": "Herbal Formula" } },
+      { "type": "benefit", "settings": { "icon_emoji": "🛡️", "icon_bg": "#DBE9E0", "title": "Strengthens Natural Immunity","description": "Ingredients traditionally used in Ayurveda to support robust immune function and overall wellness.", "tag_label": "Immunity Support" } }
+    ]
+  }]
+}
+{% endschema %}
