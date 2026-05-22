@@ -1,9 +1,9 @@
 name: Deploy Shopify Theme
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    # Native Shopify GitHub integration handles auto-deploy.
+    # Run this manually only if the native integration ever fails.
 
 jobs:
   deploy:
