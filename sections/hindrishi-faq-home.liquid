@@ -124,6 +124,30 @@
   .hfaq__cta p { font-size: 1.6rem; color: var(--hindrishi-text-medium); margin: 0; }
 </style>
 
+{%- if section.blocks.size > 0 -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for block in section.blocks -%}
+      {%- if block.settings.question != blank and block.settings.answer != blank -%}
+        {%- unless forloop.first -%},{%- endunless -%}
+        {
+          "@type": "Question",
+          "name": {{ block.settings.question | json }},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": {{ block.settings.answer | strip_html | json }}
+          }
+        }
+      {%- endif -%}
+    {%- endfor -%}
+  ]
+}
+</script>
+{%- endif -%}
+
 {% schema %}
 {
   "name": "FAQ Section",

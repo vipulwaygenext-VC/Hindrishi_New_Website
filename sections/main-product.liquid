@@ -790,6 +790,73 @@
     <script type="application/ld+json">
       {{ product | structured_data }}
     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "@id": "{{ shop.url }}{{ product.url }}#product",
+      "name": {{ product.title | json }},
+      "description": {{ product.description | strip_html | truncate: 500 | json }},
+      "brand": {
+        "@type": "Brand",
+        "name": "Hindrishi Ayurveda",
+        "@id": "{{ shop.url }}/#organization"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Hindrishi Ayurveda",
+        "@id": "{{ shop.url }}/#organization"
+      },
+      "countryOfOrigin": "IN",
+      "offers": {
+        "@type": "Offer",
+        "url": "{{ shop.url }}{{ product.url }}",
+        "priceCurrency": "INR",
+        "price": "{{ product.selected_or_first_available_variant.price | money_without_currency | remove: ',' }}",
+        "priceValidUntil": "{{ 'now' | date: '%Y' | plus: 1 }}-12-31",
+        "availability": "{% if product.selected_or_first_available_variant.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IN",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "IN"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "businessDays": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+            },
+            "cutoffTime": "17:00:00+05:30",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 3,
+              "maxValue": 7,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "seller": {
+          "@type": "Organization",
+          "name": "Hindrishi Ayurveda",
+          "@id": "{{ shop.url }}/#organization"
+        }
+      }
+    }
+    </script>
   </div>
 </product-info>
 
