@@ -1,0 +1,164 @@
+{{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .habout-hero-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .habout-hero-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="habout-hero habout-hero-{{ section.id }}"
+     style="background:{{ section.settings.bg_color }};">
+
+  {%- if section.settings.bg_image != blank -%}
+    <div class="habout-hero__bg-wrap">
+      {{
+        section.settings.bg_image
+        | image_url: width: 1600
+        | image_tag:
+          loading: 'eager',
+          fetchpriority: 'high',
+          class: 'habout-hero__bg-img',
+          alt: ''
+      }}
+      <div class="habout-hero__overlay" style="opacity:{{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
+    </div>
+  {%- endif -%}
+
+  <div class="page-width habout-hero__content {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}">
+
+    <span class="hindrishi-section-tag" style="color:{{ section.settings.tag_color }};">{{ section.settings.tag }}</span>
+    <h1 class="habout-hero__heading" style="color:{{ section.settings.heading_color }};">
+      {{ section.settings.heading }}
+    </h1>
+    {%- if section.settings.subheading != blank -%}
+      <p class="habout-hero__sub" style="color:{{ section.settings.subheading_color }};">
+        {{ section.settings.subheading }}
+      </p>
+    {%- endif -%}
+
+    <div class="habout-hero__stats">
+      {%- for i in (1..4) -%}
+        {%- assign num_key   = 'stat' | append: i | append: '_number' -%}
+        {%- assign label_key = 'stat' | append: i | append: '_label' -%}
+        {%- assign num   = section.settings[num_key] -%}
+        {%- assign label = section.settings[label_key] -%}
+        {%- if num != blank -%}
+          <div class="habout-hero__stat">
+            <span class="habout-hero__stat-num">{{ num }}</span>
+            <span class="habout-hero__stat-label">{{ label }}</span>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .habout-hero {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .habout-hero__bg-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .habout-hero__bg-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .habout-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: #1C1C1C;
+  }
+  .habout-hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .habout-hero__heading {
+    font-size: clamp(3.2rem, 6vw, 5.6rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin: 12px 0 20px;
+    letter-spacing: -0.02em;
+  }
+  .habout-hero__sub {
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 auto 40px;
+    opacity: .9;
+  }
+  .habout-hero__stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 40px;
+    margin-top: 8px;
+  }
+  .habout-hero__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .habout-hero__stat-num {
+    font-size: clamp(2.8rem, 4vw, 4rem);
+    font-weight: 800;
+    color: var(--hindrishi-green, #2D5A27);
+    line-height: 1;
+  }
+  .habout-hero__stat-label {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--hindrishi-text-medium, #4A4A4A);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+  /* When bg image is set, invert the stat colors for contrast */
+  .habout-hero:has(.habout-hero__bg-img) .habout-hero__stat-num { color: #fff; }
+  .habout-hero:has(.habout-hero__bg-img) .habout-hero__stat-label { color: rgba(255,255,255,.75); }
+</style>
+
+{% schema %}
+{
+  "name": "About Hero",
+  "tag": "section",
+  "class": "section",
+  "limit": 1,
+  "settings": [
+    { "type": "text",         "id": "tag",              "label": "Tag Line",            "default": "Our Story" },
+    { "type": "textarea",     "id": "heading",          "label": "Heading",             "default": "5,000 Years of Wisdom.\nOne Trusted Brand." },
+    { "type": "textarea",     "id": "subheading",       "label": "Subheading",          "default": "Hindrishi Ayurveda was born from a deep belief that India's ancient healing knowledge, when combined with modern quality standards, can transform everyday wellness." },
+    { "type": "image_picker", "id": "bg_image",         "label": "Background Image (optional)" },
+    { "type": "range",        "id": "overlay_opacity",  "label": "Image Overlay %",     "min": 0, "max": 80, "step": 5, "default": 40 },
+    { "type": "color",        "id": "bg_color",         "label": "Background Color",    "default": "#F9F4EE" },
+    { "type": "color",        "id": "tag_color",        "label": "Tag Color",           "default": "#2D5A27" },
+    { "type": "color",        "id": "heading_color",    "label": "Heading Color",       "default": "#1C1C1C" },
+    { "type": "color",        "id": "subheading_color", "label": "Subheading Color",    "default": "#4A4A4A" },
+    { "type": "text", "id": "stat1_number", "label": "Stat 1 Number", "default": "40K+" },
+    { "type": "text", "id": "stat1_label",  "label": "Stat 1 Label",  "default": "Happy Families" },
+    { "type": "text", "id": "stat2_number", "label": "Stat 2 Number", "default": "5,000" },
+    { "type": "text", "id": "stat2_label",  "label": "Stat 2 Label",  "default": "Years of Wisdom" },
+    { "type": "text", "id": "stat3_number", "label": "Stat 3 Number", "default": "GMP" },
+    { "type": "text", "id": "stat3_label",  "label": "Stat 3 Label",  "default": "Certified" },
+    { "type": "text", "id": "stat4_number", "label": "Stat 4 Number", "default": "6+" },
+    { "type": "text", "id": "stat4_label",  "label": "Stat 4 Label",  "default": "Wellness Products" },
+    { "type": "range", "id": "padding_top",    "label": "Padding Top",    "min": 40, "max": 160, "step": 8, "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding Bottom", "min": 40, "max": 160, "step": 8, "default": 80 }
+  ],
+  "presets": [{ "name": "About Hero" }]
+}
+{% endschema %}

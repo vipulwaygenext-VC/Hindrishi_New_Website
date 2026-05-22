@@ -1,0 +1,140 @@
+{
+  "sections": {
+    "about_hero": {
+      "type": "hindrishi-about-hero",
+      "settings": {
+        "tag": "Our Story",
+        "heading": "5,000 Years of Wisdom.\nOne Trusted Brand.",
+        "subheading": "Hindrishi Ayurveda was born from a deep belief that India's ancient healing knowledge, when combined with modern quality standards, can transform everyday wellness for millions of Indian families.",
+        "overlay_opacity": 40,
+        "bg_color": "#F9F4EE",
+        "tag_color": "#2D5A27",
+        "heading_color": "#1C1C1C",
+        "subheading_color": "#4A4A4A",
+        "stat1_number": "40K+",  "stat1_label": "Happy Families",
+        "stat2_number": "5,000", "stat2_label": "Years of Wisdom",
+        "stat3_number": "GMP",   "stat3_label": "Certified",
+        "stat4_number": "6+",    "stat4_label": "Wellness Products",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "brand_story": {
+      "type": "hindrishi-brand-story",
+      "settings": {
+        "tag": "The Hindrishi Mission",
+        "heading": "Rooted in Tradition, Crafted for Today",
+        "description": "We started Hindrishi Ayurveda because we saw a gap. The market was flooded with products that claimed to be Ayurvedic but contained cheap fillers, undisclosed additives, and questionable sourcing. We decided to do it differently.\n\nEvery Hindrishi product begins with a classical Ayurvedic formulation, is manufactured in our GMP-certified facility, undergoes third-party lab testing for purity and heavy metals, and carries FSSAI licensing. We don't cut corners — because your health deserves better.",
+        "stat1_number": "40K+",  "stat1_label": "Families Served",
+        "stat2_number": "100%",  "stat2_label": "Ayurvedic",
+        "stat3_number": "0",     "stat3_label": "Artificial Additives",
+        "cta_label": "Shop Our Products",
+        "image_position": "right",
+        "bg_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "certifications": {
+      "type": "hindrishi-certifications",
+      "blocks": {
+        "c1": { "type": "cert", "settings": { "icon": "🌿", "icon_bg": "#DBE9E0", "label": "100% Ayurvedic Formula" } },
+        "c2": { "type": "cert", "settings": { "icon": "🏭", "icon_bg": "#FFDFB8", "label": "GMP Certified Manufacturing" } },
+        "c3": { "type": "cert", "settings": { "icon": "🧪", "icon_bg": "#DBE9E0", "label": "Third-Party Lab Tested" } },
+        "c4": { "type": "cert", "settings": { "icon": "📋", "icon_bg": "#FFDFB8", "label": "FSSAI Licensed" } },
+        "c5": { "type": "cert", "settings": { "icon": "🇮🇳", "icon_bg": "#DBE9E0", "label": "Made in India" } }
+      },
+      "block_order": ["c1","c2","c3","c4","c5"],
+      "settings": { "bg_color": "#F9F4EE", "padding_top": 28 }
+    },
+    "timeline": {
+      "type": "hindrishi-about-timeline",
+      "blocks": {
+        "m1": { "type": "milestone", "settings": { "year": "2018", "icon": "🌱", "dot_color": "#2D5A27", "title": "The Vision Takes Root", "description": "Hindrishi Ayurveda was founded on a belief that India's ancient healing tradition, combined with modern quality standards, could genuinely improve everyday lives across the country." } },
+        "m2": { "type": "milestone", "settings": { "year": "2019", "icon": "🏭", "dot_color": "#8B5E3C", "title": "GMP Certification Achieved", "description": "We invested in a fully GMP-certified manufacturing facility — ensuring every product meets pharmaceutical-grade production standards before a single bottle leaves our premises." } },
+        "m3": { "type": "milestone", "settings": { "year": "2020", "icon": "🌿", "dot_color": "#2D5A27", "title": "First Formulas Launched", "description": "Our flagship Liv-Revive Liver Syrup and Kidney Wellness formulas launched — each validated through rigorous third-party lab testing and rooted in classical Ayurvedic texts." } },
+        "m4": { "type": "milestone", "settings": { "year": "2021", "icon": "👨‍👩‍👧", "dot_color": "#8B5E3C", "title": "10,000 Families Served", "description": "Word spread naturally. Our commitment to authentic ingredients and transparent formulations resonated with families who were tired of synthetic supplements and empty marketing claims." } },
+        "m5": { "type": "milestone", "settings": { "year": "2023", "icon": "🏆", "dot_color": "#2D5A27", "title": "40,000+ Families Trust Hindrishi", "description": "Today, over 40,000 families across India rely on us for their daily wellness. We ship to every pin code in India and remain committed to the same principles we started with — purity, authenticity, and trust." } }
+      },
+      "block_order": ["m1","m2","m3","m4","m5"],
+      "settings": {
+        "tag": "Our Journey",
+        "heading": "How Hindrishi Began",
+        "subheading": "From a single vision to 40,000+ trusted families across India",
+        "bg_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "values": {
+      "type": "hindrishi-about-values",
+      "blocks": {
+        "v1": { "type": "value", "settings": { "icon": "🌿", "icon_bg": "#DBE9E0", "accent_color": "#2D5A27", "title": "Authenticity First", "description": "Every formula is rooted in classical Ayurvedic texts. We don't create trendy supplements — we carry forward a healing tradition that has served humanity for millennia." } },
+        "v2": { "type": "value", "settings": { "icon": "🔬", "icon_bg": "#FFDFB8", "accent_color": "#8B5E3C", "title": "Science-Backed Quality", "description": "Ancient wisdom deserves modern validation. Every batch is lab tested for purity, potency, and safety before it reaches your home. No compromises, ever." } },
+        "v3": { "type": "value", "settings": { "icon": "🤝", "icon_bg": "#DBE9E0", "accent_color": "#2D5A27", "title": "Radical Transparency", "description": "We tell you exactly what's in every product, where it comes from, and how it's made. No hidden ingredients, no vague 'proprietary blends'." } },
+        "v4": { "type": "value", "settings": { "icon": "🇮🇳", "icon_bg": "#FFDFB8", "accent_color": "#8B5E3C", "title": "Proudly Made in India", "description": "Every product is formulated and manufactured in India, for India. We understand Indian lifestyles and body types better than any imported supplement can." } },
+        "v5": { "type": "value", "settings": { "icon": "💚", "icon_bg": "#DBE9E0", "accent_color": "#2D5A27", "title": "People Over Profit", "description": "Effective Ayurvedic wellness should not be a luxury. Our pricing reflects our commitment to keeping quality accessible to every Indian family." } },
+        "v6": { "type": "value", "settings": { "icon": "🌍", "icon_bg": "#FFDFB8", "accent_color": "#8B5E3C", "title": "Ethical & Sustainable", "description": "We source herbs from sustainable farms, use no animal-derived ingredients, and never test on animals. Our wellness mission extends to the planet." } }
+      },
+      "block_order": ["v1","v2","v3","v4","v5","v6"],
+      "settings": {
+        "tag": "Our Values",
+        "heading": "What We Stand For",
+        "subheading": "The principles that guide every product we make and every decision we take",
+        "bg_color": "#F9F4EE",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "testimonials": {
+      "type": "hindrishi-testimonials",
+      "blocks": {
+        "r1": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "Pehli baar kisi product ne itni jaldi relief diya", "review": "I was feeling very heavy after meals and had zero energy. Started taking this syrup and within 3 weeks, I'm feeling so much lighter. Digestion has improved a lot. Very happy with results.", "author_name": "Rajesh Kumar", "author_location": "Delhi", "product": "Liv-Revive Liver Syrup" } },
+        "r2": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "The self-care ritual I always needed", "review": "Between work and family, I never took time for myself. This oil changed that. My skin is softer but honestly, the mental wellness benefit is even better. Thank you Hindrishi.", "author_name": "Meera Nair", "author_location": "Chennai", "product": "Breast Care Oil" } },
+        "r3": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "Natural support that actually works", "review": "Been using for 2 months consistently and my overall wellness has improved. No more that heavy, tired feeling. I appreciate that it's all natural herbs. Highly recommend.", "author_name": "Dr. Amit Verma", "author_location": "Bangalore", "product": "Kidney Wellness Support" } }
+      },
+      "block_order": ["r1","r2","r3"],
+      "settings": {
+        "tag": "What Customers Say",
+        "heading": "40,000+ Families Agree",
+        "subheading": "Real results from real people who trust Hindrishi Ayurveda",
+        "bg_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "cta_strip": {
+      "type": "hindrishi-why-us",
+      "blocks": {
+        "f1": { "type": "item", "settings": { "icon_emoji": "🌿", "title": "Authentic Ayurvedic Formula",   "description": "Every ingredient selected from classical texts. No shortcuts.", "icon_bg": "#DBE9E0", "icon_color": "#2D5A27" } },
+        "f2": { "type": "item", "settings": { "icon_emoji": "🏭", "title": "GMP Certified Manufacturing",  "description": "Pharmaceutical-grade facilities, strict quality controls.", "icon_bg": "#FFDFB8", "icon_color": "#8B5E3C" } },
+        "f3": { "type": "item", "settings": { "icon_emoji": "🧪", "title": "Lab Tested Every Batch",       "description": "Third-party testing for purity, potency, and heavy metals.", "icon_bg": "#DBE9E0", "icon_color": "#2D5A27" } },
+        "f4": { "type": "item", "settings": { "icon_emoji": "🇮🇳", "title": "Made in India, For India",    "description": "Designed for Indian lifestyles, dietary habits, and body types.", "icon_bg": "#FFDFB8", "icon_color": "#8B5E3C" } }
+      },
+      "block_order": ["f1","f2","f3","f4"],
+      "settings": {
+        "tag": "Why Hindrishi",
+        "heading": "Ready to Start Your Wellness Journey?",
+        "description": "Explore our range of authentic Ayurvedic formulations — each crafted from classical herbs, manufactured to GMP standards, and trusted by 40,000+ Indian families.",
+        "cta_label": "Shop All Products",
+        "bg_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "newsletter": {
+      "type": "email-signup-banner",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "heading": "Join the Hindrishi Wellness Community",
+        "heading_scale": 100,
+        "button_label": "Subscribe",
+        "show_background_image": false,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": ["about_hero","brand_story","certifications","timeline","values","testimonials","cta_strip","newsletter"]
+}

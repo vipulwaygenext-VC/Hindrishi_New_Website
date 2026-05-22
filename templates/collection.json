@@ -1,10 +1,24 @@
 {
   "sections": {
+    "trust_strip": {
+      "type": "hindrishi-trust-strip",
+      "blocks": {
+        "item1": { "type": "item", "settings": { "icon": "🌿", "text": "100% Ayurvedic Formula" } },
+        "item2": { "type": "item", "settings": { "icon": "✓",  "text": "GMP Certified Manufacturing" } },
+        "item3": { "type": "item", "settings": { "icon": "🏆", "text": "FSSAI Licensed" } },
+        "item4": { "type": "item", "settings": { "icon": "🧪", "text": "Lab Tested for Purity" } },
+        "item5": { "type": "item", "settings": { "icon": "👨‍👩‍👧","text": "40,000+ Happy Customers" } },
+        "item6": { "type": "item", "settings": { "icon": "🚚", "text": "Free Shipping ₹499+" } },
+        "item7": { "type": "item", "settings": { "icon": "💰", "text": "COD Available Pan India" } }
+      },
+      "block_order": ["item1","item2","item3","item4","item5","item6","item7"],
+      "settings": { "bg_color": "#2D5A27", "text_color": "#ffffff", "padding_v": 10 }
+    },
     "banner": {
       "type": "main-collection-banner",
       "settings": {
         "show_collection_description": true,
-        "show_collection_image": false,
+        "show_collection_image": true,
         "color_scheme": "scheme-1"
       }
     },
@@ -16,10 +30,10 @@
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
-        "show_secondary_image": false,
+        "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
+        "show_rating": true,
+        "quick_add": "standard",
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
@@ -27,10 +41,35 @@
         "padding_top": 0,
         "padding_bottom": 36
       }
+    },
+    "usp_strip": {
+      "type": "hindrishi-usp-strip",
+      "blocks": {
+        "usp1": { "type": "usp", "settings": { "icon_emoji": "🌿", "title": "100% Ayurvedic", "subtitle": "Authentic herbal formulations", "icon_bg": "#DBE9E0" } },
+        "usp2": { "type": "usp", "settings": { "icon_emoji": "🏭", "title": "GMP Certified",  "subtitle": "Quality you can trust",        "icon_bg": "#FFDFB8" } },
+        "usp3": { "type": "usp", "settings": { "icon_emoji": "🧪", "title": "Lab Tested",     "subtitle": "Verified purity & safety",      "icon_bg": "#DBE9E0" } },
+        "usp4": { "type": "usp", "settings": { "icon_emoji": "🚚", "title": "Free Shipping",   "subtitle": "On orders above ₹499",          "icon_bg": "#FFDFB8" } }
+      },
+      "block_order": ["usp1","usp2","usp3","usp4"],
+      "settings": { "bg_color": "#ffffff", "padding_top": 40, "padding_bottom": 40 }
+    },
+    "testimonials": {
+      "type": "hindrishi-testimonials",
+      "blocks": {
+        "r1": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "Pehli baar kisi product ne itni jaldi relief diya", "review": "I was feeling very heavy after meals and had zero energy. Started taking this syrup and within 3 weeks, I'm feeling so much lighter. Digestion has improved a lot.", "author_name": "Rajesh Kumar", "author_location": "Delhi", "product": "Liv-Revive Liver Syrup" } },
+        "r2": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "My doctor suggested Ayurvedic and I chose Hindrishi", "review": "Instead of going for heavy medicines, I wanted something natural. This syrup has been amazing. No side effects, and I definitely feel the difference in my energy.", "author_name": "Priya Sharma", "author_location": "Mumbai", "product": "Liv-Revive Liver Syrup" } },
+        "r3": { "type": "review", "settings": { "rating": 5, "verified": true, "title": "Natural support that actually works", "review": "Been using for 2 months consistently and my overall wellness has improved. No more that heavy, tired feeling. I appreciate that it's all natural herbs.", "author_name": "Dr. Amit Verma", "author_location": "Bangalore", "product": "Kidney Wellness Support" } }
+      },
+      "block_order": ["r1","r2","r3"],
+      "settings": {
+        "tag": "What Customers Say",
+        "heading": "Trusted by 40,000+ Families",
+        "subheading": "Real results from verified buyers across India",
+        "bg_color": "#F9F4EE",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
     }
   },
-  "order": [
-    "banner",
-    "product-grid"
-  ]
+  "order": ["trust_strip","banner","product-grid","usp_strip","testimonials"]
 }

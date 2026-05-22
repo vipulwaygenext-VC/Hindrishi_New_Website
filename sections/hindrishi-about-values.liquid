@@ -1,0 +1,129 @@
+{{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .havalues-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .havalues-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="havalues havalues-{{ section.id }}" style="background:{{ section.settings.bg_color }};">
+  <div class="page-width">
+
+    <div class="havalues__header {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}">
+      <span class="hindrishi-section-tag">{{ section.settings.tag }}</span>
+      <h2 class="hindrishi-section-heading">{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="hindrishi-section-subheading" style="margin:0 auto;">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+      <div class="hindrishi-divider"></div>
+    </div>
+
+    <div class="havalues__grid">
+      {%- for block in section.blocks -%}
+        <div class="havalues__card {% if settings.animations_reveal_on_scroll %}scroll-trigger animate--slide-in{% endif %}"
+             style="border-top:3px solid {{ block.settings.accent_color }};"
+             {{ block.shopify_attributes }}>
+          <div class="havalues__icon-wrap" style="background:{{ block.settings.icon_bg }}; color:{{ block.settings.accent_color }};">
+            <span aria-hidden="true">{{ block.settings.icon }}</span>
+          </div>
+          <h3 class="havalues__title">{{ block.settings.title }}</h3>
+          <p class="havalues__desc">{{ block.settings.description }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .havalues__header { text-align: center; margin-bottom: 48px; }
+  .havalues__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  @media screen and (min-width: 600px) {
+    .havalues__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media screen and (min-width: 990px) {
+    .havalues__grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .havalues__card {
+    background: #fff;
+    border-radius: var(--hindrishi-radius-md);
+    padding: 28px 24px;
+    box-shadow: var(--hindrishi-shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: box-shadow .2s, transform .2s;
+  }
+  .havalues__card:hover {
+    box-shadow: var(--hindrishi-shadow-md);
+    transform: translateY(-2px);
+  }
+  .havalues__icon-wrap {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.6rem;
+    flex-shrink: 0;
+  }
+  .havalues__title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--hindrishi-text-dark);
+    margin: 0;
+  }
+  .havalues__desc {
+    font-size: 1.4rem;
+    color: var(--hindrishi-text-medium);
+    line-height: 1.65;
+    margin: 0;
+    flex: 1;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Our Values",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text",  "id": "tag",        "label": "Section Tag",  "default": "Our Values" },
+    { "type": "text",  "id": "heading",    "label": "Heading",      "default": "What We Stand For" },
+    { "type": "text",  "id": "subheading", "label": "Subheading",   "default": "The principles that guide every product we make and every decision we take" },
+    { "type": "color", "id": "bg_color",   "label": "Background",   "default": "#F9F4EE" },
+    { "type": "range", "id": "padding_top",    "label": "Padding Top",    "min": 40, "max": 120, "step": 8, "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding Bottom", "min": 40, "max": 120, "step": 8, "default": 80 }
+  ],
+  "blocks": [{
+    "type": "value", "name": "Value Card",
+    "settings": [
+      { "type": "text",     "id": "icon",         "label": "Emoji Icon",      "default": "🌿" },
+      { "type": "color",    "id": "icon_bg",      "label": "Icon Background", "default": "#DBE9E0" },
+      { "type": "color",    "id": "accent_color", "label": "Accent Color",    "default": "#2D5A27" },
+      { "type": "text",     "id": "title",        "label": "Value Title",     "default": "Authenticity" },
+      { "type": "textarea", "id": "description",  "label": "Description" }
+    ]
+  }],
+  "presets": [{
+    "name": "Our Values",
+    "blocks": [
+      { "type": "value", "settings": { "icon": "🌿", "icon_bg": "#DBE9E0", "accent_color": "#2D5A27", "title": "Authenticity First", "description": "Every formula we create is rooted in classical Ayurvedic texts. We don't create trendy supplements — we carry forward a healing tradition that has served humanity for millennia." } },
+      { "type": "value", "settings": { "icon": "🔬", "icon_bg": "#FFDFB8", "accent_color": "#8B5E3C", "title": "Science-Backed Quality", "description": "Ancient wisdom deserves modern validation. Every batch is lab tested for purity, potency, and safety before it reaches your home. No compromises." } },
+      { "type": "value", "settings": { "icon": "🤝", "icon_bg": "#DBE9E0", "accent_color": "#2D5A27", "title": "Radical Transparency", "description": "We tell you exactly what's in every product, where it comes from, and how it's made. No hidden ingredients, no vague 'proprietary blends'." } },
+      { "type": "value", "settings": { "icon": "🇮🇳", "icon_bg": "#FFDFB8", "accent_color": "#8B5E3C", "title": "Proudly Made in India", "description": "Every product is formulated and manufactured in India, for India. We understand Indian lifestyles, dietary habits, and body types better than any imported supplement can." } },
+      { "type": "value", "settings": { "icon": "💚", "icon_bg": "#DBE9E0", "accent_color": "#2D5A27", "title": "People Over Profit", "description": "We believe that accessible, effective Ayurvedic wellness should not be a luxury. Our pricing reflects our commitment to keeping quality within reach of every Indian family." } },
+      { "type": "value", "settings": { "icon": "🌍", "icon_bg": "#FFDFB8", "accent_color": "#8B5E3C", "title": "Sustainable & Ethical", "description": "We source herbs from sustainable farms, use no animal-derived ingredients, and never test on animals. Our wellness mission extends to the planet as well as people." } }
+    ]
+  }]
+}
+{% endschema %}
