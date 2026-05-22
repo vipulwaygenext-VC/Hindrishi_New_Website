@@ -495,6 +495,12 @@
           </details>
         {%- endif -%}
 
+        <!-- Hindrishi: shipping bar + prepaid nudge -->
+        {%- if cart != empty -%}
+          {%- render 'hindrishi-shipping-bar', threshold_rupees: 499 -%}
+          {%- render 'hindrishi-prepaid-banner', prepaid_savings: '₹50', compact: true -%}
+        {%- endif -%}
+
         <!-- Start blocks -->
         <!-- Subtotals -->
 

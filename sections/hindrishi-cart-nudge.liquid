@@ -1,0 +1,76 @@
+{{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+{{ 'hindrishi-product.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .hcart-nudge-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .hcart-nudge-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- if cart != empty -%}
+<div class="hcart-nudge hcart-nudge-{{ section.id }}" style="background:{{ section.settings.bg_color }};">
+  <div class="page-width hcart-nudge__inner">
+
+    {%- if section.settings.show_shipping_bar -%}
+      {%- assign threshold_rupees = section.settings.free_shipping_threshold -%}
+      {%- render 'hindrishi-shipping-bar', threshold_rupees: threshold_rupees -%}
+    {%- endif -%}
+
+    {%- if section.settings.show_prepaid_nudge -%}
+      {%- assign prepaid_savings = section.settings.prepaid_savings -%}
+      {%- render 'hindrishi-prepaid-banner', prepaid_savings: prepaid_savings -%}
+    {%- endif -%}
+
+    {%- if section.settings.show_trust_row -%}
+      <div class="hcart-nudge__trust">
+        <span>🔒 Secure Checkout</span>
+        <span>🌿 100% Ayurvedic</span>
+        <span>🚚 Fast Dispatch</span>
+        <span>💰 COD Available</span>
+      </div>
+    {%- endif -%}
+
+  </div>
+</div>
+{%- endif -%}
+
+<style>
+  .hcart-nudge__inner { max-width: 720px; margin: 0 auto; }
+  .hcart-nudge__trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--hindrishi-text-medium);
+    margin-top: 4px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Cart Nudge",
+  "tag": "section",
+  "class": "section",
+  "limit": 1,
+  "settings": [
+    { "type": "checkbox", "id": "show_shipping_bar",        "label": "Show Free Shipping Bar",   "default": true },
+    { "type": "range",    "id": "free_shipping_threshold",  "label": "Free Shipping Threshold (₹)", "min": 299, "max": 999, "step": 50, "default": 499 },
+    { "type": "checkbox", "id": "show_prepaid_nudge",       "label": "Show Prepaid Savings Nudge", "default": true },
+    { "type": "text",     "id": "prepaid_savings",          "label": "Prepaid Savings Amount",   "default": "₹50" },
+    { "type": "checkbox", "id": "show_trust_row",           "label": "Show Trust Icons Row",      "default": true },
+    { "type": "color",    "id": "bg_color",                 "label": "Background",               "default": "#F9F4EE" },
+    { "type": "range",    "id": "padding_top",              "label": "Padding Top",  "min": 8,  "max": 60, "step": 4, "default": 20 },
+    { "type": "range",    "id": "padding_bottom",           "label": "Padding Bottom","min": 8, "max": 60, "step": 4, "default": 8  }
+  ],
+  "presets": [{ "name": "Cart Nudge" }]
+}
+{% endschema %}

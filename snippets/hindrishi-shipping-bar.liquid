@@ -1,0 +1,72 @@
+{% comment %}
+  Renders free-shipping progress bar.
+  Variables:
+    threshold_rupees — integer (default 499)
+{% endcomment %}
+
+{%- assign threshold_rupees = threshold_rupees | default: 499 -%}
+{%- assign threshold_paise  = threshold_rupees | times: 100 -%}
+{%- assign cart_total       = cart.total_price -%}
+
+{{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
+
+{%- if cart_total >= threshold_paise -%}
+  <div class="hship hship--unlocked">
+    <span class="hship__check">🎉</span>
+    <span class="hship__msg">You've unlocked <strong>Free Delivery!</strong></span>
+  </div>
+{%- else -%}
+  {%- assign remaining_paise = threshold_paise | minus: cart_total -%}
+  {%- assign pct = cart_total | times: 100 | divided_by: threshold_paise -%}
+  <div class="hship">
+    <div class="hship__top">
+      <span class="hship__icon">🚚</span>
+      <span class="hship__msg">Add <strong>{{ remaining_paise | money }}</strong> more for Free Delivery</span>
+    </div>
+    <div class="hship__track">
+      <div class="hship__fill" style="width:{{ pct }}%"></div>
+    </div>
+  </div>
+{%- endif -%}
+
+<style>
+  .hship {
+    background: var(--hindrishi-green-pale, #DBE9E0);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+  }
+  .hship--unlocked {
+    background: #D4F0DD;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hship__top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .hship__msg {
+    font-size: 1.3rem;
+    color: var(--hindrishi-text-dark, #1C1C1C);
+    line-height: 1.4;
+  }
+  .hship__msg strong { color: var(--hindrishi-green, #2D5A27); }
+  .hship__icon { font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
+  .hship__check { font-size: 1.8rem; }
+  .hship__track {
+    height: 6px;
+    background: rgba(45,90,39,0.15);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .hship__fill {
+    height: 100%;
+    background: var(--hindrishi-green, #2D5A27);
+    border-radius: 3px;
+    transition: width .4s ease;
+    min-width: 4px;
+  }
+</style>
