@@ -1,1 +1,48 @@
-{"name":"t:sections.footer.name","type":"footer","sections":{"footer":{"type":"footer","settings":{"color_scheme":"scheme-4","newsletter_enable":true,"newsletter_heading":"Subscribe to our emails","enable_follow_on_shop":true,"show_social":true,"enable_country_selector":true,"enable_language_selector":true,"payment_enable":false,"show_policy":true,"margin_top":0,"padding_top":32,"padding_bottom":32}}},"order":["footer"]}
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand": {
+          "type": "brand_information",
+          "settings": {
+            "paragraph": "<p>Hindrishi Ayurveda — Premium herbal formulations rooted in 5,000 years of Ayurvedic wisdom. GMP certified. Lab tested. Trusted by 40,000+ families across India.</p>",
+            "show_social": true
+          }
+        },
+        "menu_shop": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "footer-shop"
+          }
+        },
+        "menu_info": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Information",
+            "menu": "footer-info"
+          }
+        }
+      },
+      "block_order": ["brand", "menu_shop", "menu_info"],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "newsletter_enable": true,
+        "newsletter_heading": "Join the Wellness Community",
+        "enable_follow_on_shop": false,
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 40,
+        "padding_bottom": 32
+      }
+    }
+  },
+  "order": ["footer"]
+}

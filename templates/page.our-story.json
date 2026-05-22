@@ -29,6 +29,7 @@
         "stat2_number": "100%",  "stat2_label": "Ayurvedic",
         "stat3_number": "0",     "stat3_label": "Artificial Additives",
         "cta_label": "Shop Our Products",
+        "cta_link": "/collections/all",
         "image_position": "right",
         "bg_color": "#ffffff",
         "padding_top": 80,
@@ -117,6 +118,7 @@
         "heading": "Ready to Start Your Wellness Journey?",
         "description": "Explore our range of authentic Ayurvedic formulations — each crafted from classical herbs, manufactured to GMP standards, and trusted by 40,000+ Indian families.",
         "cta_label": "Shop All Products",
+        "cta_link": "/collections/all",
         "bg_color": "#ffffff",
         "padding_top": 80,
         "padding_bottom": 80
