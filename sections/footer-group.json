@@ -11,6 +11,63 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "hindrishi_certifications_iwUhAp": {
+      "type": "hindrishi-certifications",
+      "blocks": {
+        "cert_4iRaNK": {
+          "type": "cert",
+          "settings": {
+            "icon": "🌿",
+            "icon_bg": "#dbe9e0",
+            "label": "100% Ayurvedic Formula"
+          }
+        },
+        "cert_VbiE6c": {
+          "type": "cert",
+          "settings": {
+            "icon": "🏭",
+            "icon_bg": "#ffdfb8",
+            "label": "GMP Certified Manufacturing"
+          }
+        },
+        "cert_KJW7YV": {
+          "type": "cert",
+          "settings": {
+            "icon": "🧪",
+            "icon_bg": "#dbe9e0",
+            "label": "Lab Tested for Purity"
+          }
+        },
+        "cert_8iNe8h": {
+          "type": "cert",
+          "settings": {
+            "icon": "📋",
+            "icon_bg": "#ffdfb8",
+            "label": "FSSAI Licensed"
+          }
+        },
+        "cert_m3UEL3": {
+          "type": "cert",
+          "settings": {
+            "icon": "🇮🇳",
+            "icon_bg": "#dbe9e0",
+            "label": "Made in India"
+          }
+        }
+      },
+      "block_order": [
+        "cert_4iRaNK",
+        "cert_VbiE6c",
+        "cert_KJW7YV",
+        "cert_8iNe8h",
+        "cert_m3UEL3"
+      ],
+      "name": "Certifications Strip",
+      "settings": {
+        "bg_color": "#ffffff",
+        "padding_top": 24
+      }
+    },
     "footer": {
       "type": "footer",
       "settings": {
@@ -30,6 +87,7 @@
     }
   },
   "order": [
+    "hindrishi_certifications_iwUhAp",
     "footer"
   ]
 }

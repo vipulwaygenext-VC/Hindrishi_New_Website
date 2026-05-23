@@ -70,6 +70,91 @@
         "accessibility_info": ""
       }
     },
+    "hindrishi_trust_strip_tDyeLU": {
+      "type": "hindrishi-trust-strip",
+      "blocks": {
+        "item_VkjqHU": {
+          "type": "item",
+          "settings": {
+            "icon": "🌿",
+            "text": "100% Ayurvedic Formula"
+          }
+        },
+        "item_x7zbLX": {
+          "type": "item",
+          "settings": {
+            "icon": "✓",
+            "text": "GMP Certified Manufacturing"
+          }
+        },
+        "item_GKKiph": {
+          "type": "item",
+          "settings": {
+            "icon": "🏆",
+            "text": "FSSAI Licensed"
+          }
+        },
+        "item_WW73YJ": {
+          "type": "item",
+          "settings": {
+            "icon": "🧪",
+            "text": "Lab Tested for Purity"
+          }
+        },
+        "item_zQiKJt": {
+          "type": "item",
+          "settings": {
+            "icon": "👨‍👩‍👧",
+            "text": "40,000+ Happy Customers"
+          }
+        },
+        "item_GHYc8R": {
+          "type": "item",
+          "settings": {
+            "icon": "🚚",
+            "text": "Free Shipping ₹499+"
+          }
+        },
+        "item_ArxVtR": {
+          "type": "item",
+          "settings": {
+            "icon": "💰",
+            "text": "COD Available Pan India"
+          }
+        },
+        "item_aMJ8xy": {
+          "type": "item",
+          "settings": {
+            "icon": "🔒",
+            "text": "Secure Checkout"
+          }
+        },
+        "item_wnELHh": {
+          "type": "item",
+          "settings": {
+            "icon": "🇮🇳",
+            "text": "Made in India"
+          }
+        }
+      },
+      "block_order": [
+        "item_VkjqHU",
+        "item_x7zbLX",
+        "item_GKKiph",
+        "item_WW73YJ",
+        "item_zQiKJt",
+        "item_GHYc8R",
+        "item_ArxVtR",
+        "item_aMJ8xy",
+        "item_wnELHh"
+      ],
+      "name": "Trust Strip",
+      "settings": {
+        "bg_color": "#2D5A27",
+        "text_color": "#ffffff",
+        "padding_v": 12
+      }
+    },
     "hindrishi_about_hero_CTM9ed": {
       "type": "hindrishi-about-hero",
       "name": "About Hero",
@@ -90,8 +175,8 @@
         "stat3_label": "Certified",
         "stat4_number": "6+",
         "stat4_label": "Wellness Products",
-        "padding_top": 80,
-        "padding_bottom": 80
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "featured_collection_6rjzfi": {
@@ -297,6 +382,7 @@
   "order": [
     "main",
     "slideshow_qXqQbG",
+    "hindrishi_trust_strip_tDyeLU",
     "hindrishi_about_hero_CTM9ed",
     "featured_collection_6rjzfi",
     "featured_collection_PdNBwK",
