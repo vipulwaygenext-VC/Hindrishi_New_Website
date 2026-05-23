@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -6,9 +15,94 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "hindrishi_why_us_mniraY": {
+      "type": "hindrishi-why-us",
+      "blocks": {
+        "item_xxGVzM": {
+          "type": "item",
+          "settings": {
+            "icon_emoji": "🌿",
+            "icon_bg": "#dbe9e0",
+            "icon_color": "#2d5a27",
+            "title": "Authentic Ayurvedic Formula",
+            "description": "Every ingredient is carefully selected based on classical Ayurvedic texts. No shortcuts — just pure, traditional wisdom in every product."
+          }
+        },
+        "item_8EjURN": {
+          "type": "item",
+          "settings": {
+            "icon_emoji": "🏭",
+            "icon_bg": "#ffdfb8",
+            "icon_color": "#8b5e3c",
+            "title": "GMP Certified Manufacturing",
+            "description": "Manufactured in GMP-certified facilities with strict quality controls. Each batch tested for purity and potency before reaching you."
+          }
+        },
+        "item_K8kYDK": {
+          "type": "item",
+          "settings": {
+            "icon_emoji": "🧪",
+            "icon_bg": "#dbe9e0",
+            "icon_color": "#2d5a27",
+            "title": "Lab Tested for Safety",
+            "description": "Every formulation undergoes rigorous third-party lab testing. Free from heavy metals, harmful chemicals, and adulterants."
+          }
+        },
+        "item_iieQjn": {
+          "type": "item",
+          "settings": {
+            "icon_emoji": "🇮🇳",
+            "icon_bg": "#ffdfb8",
+            "icon_color": "#8b5e3c",
+            "title": "Made in India, For India",
+            "description": "We understand Indian lifestyles, dietary habits, and wellness needs. Specifically designed for Indian body types."
+          }
+        },
+        "item_jUkENT": {
+          "type": "item",
+          "settings": {
+            "icon_emoji": "🚫",
+            "icon_bg": "#dbe9e0",
+            "icon_color": "#2d5a27",
+            "title": "No Harmful Additives",
+            "description": "No artificial colors, flavors, or preservatives. What you see on the label is what goes into your body — nothing hidden, nothing harmful."
+          }
+        },
+        "item_nPnEfX": {
+          "type": "item",
+          "settings": {
+            "icon_emoji": "💚",
+            "icon_bg": "#ffdfb8",
+            "icon_color": "#8b5e3c",
+            "title": "Customer-First Support",
+            "description": "Your wellness journey matters to us. Our dedicated team is always ready to answer questions and support your health goals."
+          }
+        }
+      },
+      "block_order": [
+        "item_xxGVzM",
+        "item_8EjURN",
+        "item_K8kYDK",
+        "item_iieQjn",
+        "item_jUkENT",
+        "item_nPnEfX"
+      ],
+      "name": "Why Hindrishi",
+      "settings": {
+        "tag": "Why Choose Us",
+        "heading": "The Hindrishi Promise",
+        "description": "We don't just sell Ayurvedic products. We bring you 5,000 years of healing wisdom, backed by modern science, manufactured to GMP standards, and tested in certified labs — so every product is safe, effective, and authentic.",
+        "cta_label": "Shop All Products",
+        "cta_link": "",
+        "bg_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hindrishi_why_us_mniraY"
   ]
 }
