@@ -8,7 +8,6 @@
 {%- assign threshold_paise  = threshold_rupees | times: 100 -%}
 {%- assign cart_total       = cart.total_price -%}
 
-{{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
 
 {%- if cart_total >= threshold_paise -%}
   <div class="hship hship--unlocked">

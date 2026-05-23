@@ -487,8 +487,6 @@
                 -%}
 
               {%- when 'hindrishi_prepaid' -%}
-                {{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
-                {{ 'hindrishi-product.css' | asset_url | stylesheet_tag }}
                 <div class="hprepaid" {{ block.shopify_attributes }}>
                   <span class="hprepaid__icon">💳</span>
                   <div class="hprepaid__body">
@@ -501,8 +499,6 @@
                 </div>
 
               {%- when 'hindrishi_trust' -%}
-                {{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
-                {{ 'hindrishi-product.css' | asset_url | stylesheet_tag }}
                 <div class="hptrust" {{ block.shopify_attributes }}>
                   <div class="hptrust__grid">
                     {%- if block.settings.badge1 != blank -%}
@@ -533,8 +529,6 @@
                 </div>
 
               {%- when 'hindrishi_urgency' -%}
-                {{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
-                {{ 'hindrishi-product.css' | asset_url | stylesheet_tag }}
                 <div class="hurgency" {{ block.shopify_attributes }}>
                   <span class="hurgency__dot"></span>
                   {{ block.settings.text }}

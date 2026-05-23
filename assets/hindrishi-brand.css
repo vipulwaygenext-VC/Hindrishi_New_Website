@@ -184,6 +184,26 @@
 @media screen and (max-width: 749px)  { .hindrishi-hide-mobile  { display: none !important; } }
 @media screen and (min-width: 750px)  { .hindrishi-hide-desktop { display: none !important; } }
 
+/* ── Global polish ───────────────────────────── */
+html { scroll-behavior: smooth; }
+:focus-visible { outline: 2px solid var(--hindrishi-green); outline-offset: 3px; }
+
+/* Header nav weight */
+.header__menu-item { font-weight: 600; }
+
+/* Product card improvements */
+.card-wrapper .card { border-radius: var(--hindrishi-radius-md); overflow: hidden; transition: box-shadow .2s, transform .2s; }
+.card-wrapper .card:hover { box-shadow: var(--hindrishi-shadow-md); transform: translateY(-2px); }
+.card-wrapper .card__heading a { color: var(--hindrishi-text-dark); font-weight: 600; }
+.card-wrapper .price--on-sale .price-item--sale { color: var(--hindrishi-green); font-weight: 700; }
+
+/* Footer heading */
+.footer__heading { font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-size: 1.15rem; }
+
+/* Quick-add button */
+.quick-add__submit { background: var(--hindrishi-green); border-color: var(--hindrishi-green); }
+.quick-add__submit:hover { background: var(--hindrishi-green-hover); border-color: var(--hindrishi-green-hover); }
+
 /* ── Trust badge strip (product page reuse) ─── */
 .hindrishi-trust-badges {
   display: flex;

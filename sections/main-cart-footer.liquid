@@ -105,7 +105,6 @@
               </div>
             {%- else -%}
               {%- if cart != empty -%}
-                {{ 'hindrishi-brand.css' | asset_url | stylesheet_tag }}
                 {%- render 'hindrishi-prepaid-banner', prepaid_savings: '₹50', compact: false -%}
               {%- endif -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
