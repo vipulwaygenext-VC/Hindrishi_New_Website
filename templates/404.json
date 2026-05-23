@@ -198,6 +198,100 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "hindrishi_testimonials_CUJMac": {
+      "type": "hindrishi-testimonials",
+      "blocks": {
+        "review_jmVcmR": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "verified": true,
+            "title": "Pehli baar kisi product ne itni jaldi relief diya",
+            "review": "I was feeling very heavy after meals and had zero energy. Started taking this syrup and within 3 weeks, I'm feeling so much lighter. Digestion has improved a lot. Very happy with results.",
+            "author_name": "Rajesh Kumar",
+            "author_location": "Delhi",
+            "product": "Liv-Revive Liver Syrup"
+          }
+        },
+        "review_gtzQVX": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "verified": true,
+            "title": "My doctor suggested Ayurvedic and I chose Hindrishi",
+            "review": "Instead of going for heavy medicines, I wanted something natural. This syrup has been amazing. No side effects, and I definitely feel the difference in my overall energy and appetite.",
+            "author_name": "Priya Sharma",
+            "author_location": "Mumbai",
+            "product": "Liv-Revive Liver Syrup"
+          }
+        },
+        "review_7pG3BA": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "verified": true,
+            "title": "The self-care ritual I needed",
+            "review": "Between work and family, I never took time for myself. This oil has changed that. My skin is softer but honestly, the mental wellness benefit is even better. Thank you Hindrishi.",
+            "author_name": "Meera Nair",
+            "author_location": "Chennai",
+            "product": "Breast Care Oil"
+          }
+        },
+        "review_iK7Hny": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "verified": true,
+            "title": "Quality Ayurvedic care",
+            "review": "Been using for 2 months consistently and my overall wellness has improved. No more that heavy, tired feeling. I appreciate that it's all natural herbs. Highly recommend.",
+            "author_name": "Dr. Amit Verma",
+            "author_location": "Bangalore",
+            "product": "Kidney Wellness Support"
+          }
+        },
+        "review_iNx4W8": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "verified": true,
+            "title": "Ayurvedic solution that actually works",
+            "review": "Mujhe chemical treatments se dar lagta tha. This natural formula gave me confidence to try. Application is very precise. Seeing visible difference in 4 weeks. Will definitely recommend.",
+            "author_name": "Rahul Sharma",
+            "author_location": "Delhi",
+            "product": "Wart Remover"
+          }
+        },
+        "review_yHNLVM": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "verified": true,
+            "title": "Oily khane ke baad ab woh bharipan nahi rehta",
+            "review": "Mujhe toh lagta tha ki yeh permanent problem hai. But after using this for 2 months regularly, I can eat normal food without feeling that uncomfortable heaviness. Good product at good price.",
+            "author_name": "Amit Verma",
+            "author_location": "Bangalore",
+            "product": "Liv-Revive Liver Syrup"
+          }
+        }
+      },
+      "block_order": [
+        "review_jmVcmR",
+        "review_gtzQVX",
+        "review_7pG3BA",
+        "review_iK7Hny",
+        "review_iNx4W8",
+        "review_yHNLVM"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "tag": "What Customers Say",
+        "heading": "Real Results, Real People",
+        "subheading": "Join 40,000+ families who trust Hindrishi Ayurveda for their daily wellness",
+        "bg_color": "#F9F4EE",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
@@ -206,6 +300,7 @@
     "hindrishi_about_hero_CTM9ed",
     "featured_collection_6rjzfi",
     "featured_collection_PdNBwK",
-    "image_with_text_K3pRUA"
+    "image_with_text_K3pRUA",
+    "hindrishi_testimonials_CUJMac"
   ]
 }
