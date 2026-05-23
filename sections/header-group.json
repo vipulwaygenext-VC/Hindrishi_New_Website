@@ -77,82 +77,10 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
-    },
-    "hindrishi_about_timeline_YAQmeg": {
-      "type": "hindrishi-about-timeline",
-      "blocks": {
-        "milestone_jFnyTY": {
-          "type": "milestone",
-          "settings": {
-            "year": "2018",
-            "icon": "🌱",
-            "dot_color": "#2d5a27",
-            "title": "The Vision Takes Root",
-            "description": "Hindrishi Ayurveda was founded on a simple but powerful belief: that India's 5,000-year healing tradition, when combined with modern quality standards, could genuinely improve everyday lives."
-          }
-        },
-        "milestone_qMYmBV": {
-          "type": "milestone",
-          "settings": {
-            "year": "2019",
-            "icon": "🧪",
-            "dot_color": "#8b5e3c",
-            "title": "GMP Certification Achieved",
-            "description": "We invested in a fully GMP-certified manufacturing facility — ensuring every product meets pharmaceutical-grade production standards before reaching our customers."
-          }
-        },
-        "milestone_4hLj9m": {
-          "type": "milestone",
-          "settings": {
-            "year": "2020",
-            "icon": "🌿",
-            "dot_color": "#2d5a27",
-            "title": "First Products Launched",
-            "description": "Launched our flagship Liv-Revive Liver Syrup and Kidney Wellness formulas, rooted in classical Ayurvedic texts and validated through rigorous third-party lab testing."
-          }
-        },
-        "milestone_97aiBd": {
-          "type": "milestone",
-          "settings": {
-            "year": "2021",
-            "icon": "👨‍👩‍👧",
-            "dot_color": "#8b5e3c",
-            "title": "10,000 Families Served",
-            "description": "Word spread naturally. Our commitment to authentic ingredients and honest formulations resonated with Indian families who were tired of synthetic supplements."
-          }
-        },
-        "milestone_DcNicT": {
-          "type": "milestone",
-          "settings": {
-            "year": "2023",
-            "icon": "🏆",
-            "dot_color": "#2d5a27",
-            "title": "40,000+ Families Trust Hindrishi",
-            "description": "Today, over 40,000 families across India rely on Hindrishi Ayurveda for their daily wellness. We remain committed to the same principles we started with — purity, authenticity, and trust."
-          }
-        }
-      },
-      "block_order": [
-        "milestone_jFnyTY",
-        "milestone_qMYmBV",
-        "milestone_4hLj9m",
-        "milestone_97aiBd",
-        "milestone_DcNicT"
-      ],
-      "name": "Our Journey Timeline",
-      "settings": {
-        "tag": "Our Journey",
-        "heading": "How Hindrishi Began",
-        "subheading": "From a single vision to 40,000+ trusted families",
-        "bg_color": "#ffffff",
-        "padding_top": 80,
-        "padding_bottom": 80
-      }
     }
   },
   "order": [
     "announcement-bar",
-    "header",
-    "hindrishi_about_timeline_YAQmeg"
+    "header"
   ]
 }
