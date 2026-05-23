@@ -69,10 +69,65 @@
         "show_text_below": true,
         "accessibility_info": ""
       }
+    },
+    "hindrishi_about_hero_CTM9ed": {
+      "type": "hindrishi-about-hero",
+      "name": "About Hero",
+      "settings": {
+        "tag": "Our Story",
+        "heading": "5,000 Years of Wisdom.\nOne Trusted Brand.",
+        "subheading": "Hindrishi Ayurveda was born from a deep belief that India's ancient healing knowledge, when combined with modern quality standards, can transform everyday wellness.",
+        "overlay_opacity": 40,
+        "bg_color": "#F9F4EE",
+        "tag_color": "#2D5A27",
+        "heading_color": "#1C1C1C",
+        "subheading_color": "#4A4A4A",
+        "stat1_number": "40K+",
+        "stat1_label": "Happy Families",
+        "stat2_number": "5,000",
+        "stat2_label": "Years of Wisdom",
+        "stat3_number": "GMP",
+        "stat3_label": "Certified",
+        "stat4_number": "6+",
+        "stat4_label": "Wellness Products",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "featured_collection_6rjzfi": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "best-sellers",
+        "products_to_show": 4,
+        "title": "FEATURED COLLECTION",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "slideshow_qXqQbG"
+    "slideshow_qXqQbG",
+    "hindrishi_about_hero_CTM9ed",
+    "featured_collection_6rjzfi"
   ]
 }
